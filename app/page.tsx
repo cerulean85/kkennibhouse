@@ -1,8 +1,4 @@
 'use client'
-import Link from 'next/link';
-import Example2Component from '@/deprecated/Example2';
-import { Provider } from 'react-redux';
-import store from '../stores/store';
 
 export default function Home() {
   
