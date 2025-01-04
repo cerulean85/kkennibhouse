@@ -50,6 +50,10 @@ export default function RootLayout({
   return (
     <Provider store={store}>
     <html lang="en">
+      <head>
+        <title>깬닙하우스</title>
+        {/* <link rel="icon" href="%PUBLIC_URL%/heart_icon.ico"></link> */}
+      </head>
       <body>
         <CommonHeader></CommonHeader>
         <div className="container">
