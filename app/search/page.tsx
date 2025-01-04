@@ -1,12 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import { posts } from '@/contents/posts'
-import { useSearchParams } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import { setMenu } from '@/stores/currentMenuSlice'
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '@/stores/store';
 
 export default function SearchPage() {
   const [searchText, setSearchText] = useState('');
