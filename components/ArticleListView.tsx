@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Post, posts } from '@/contents/posts'
+import { posts } from '@/contents/posts'
 import { pages } from '@/contents/pages'
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
@@ -14,7 +14,7 @@ export default function ArticleListViewComponent() {
   const [author, setAuthor] = useState('');
   const [thumbnail, setThumbnail] = useState('');
   const [postCount, setPostCount] = useState(0);
-  const [postList, setPostList] = useState<Post[]>([]);
+  const [postList, setPostList] = useState([]);
 
   useEffect(() => { 
 
