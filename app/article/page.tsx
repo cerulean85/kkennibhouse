@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import { setMenu } from '@/stores/currentMenuSlice'
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/stores/store';
+import { Suspense } from 'react'
 
 export default function ArticlePage() {
   const searchParams = useSearchParams();
@@ -29,6 +30,7 @@ export default function ArticlePage() {
   }, [contents])
   
   return (
+    <Suspense>
     <div className='ly_article'>
       <div className='article-content'>
         <div className='ly_article-title'>
@@ -50,5 +52,6 @@ export default function ArticlePage() {
         </div>
       </div>
     </div>
+    </Suspense>
   )
 }
