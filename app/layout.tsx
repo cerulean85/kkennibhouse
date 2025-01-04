@@ -6,10 +6,7 @@ import CommonAside from "@/layouts/common/aside";
 import "@/styles/common.scss"
 import { Provider } from 'react-redux';
 import store from '@/stores/store';
-import React, { useState, useEffect } from "react"
-
-import { useSelector } from 'react-redux';
-import DetailViewComponent  from '@/deprecated/DetailView';
+import React, { useEffect } from "react"
 
 export default function RootLayout({
   children,
