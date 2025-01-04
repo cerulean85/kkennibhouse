@@ -1,7 +1,9 @@
 const CommonFooter = () => {
     return (
         <footer>
-            {/* <p>&copy; 2024 My Website. All Rights Reserved.</p> */}
+            <div className="footer-container">
+                &copy; 2024. ZHKim. All Rights Reserved.
+            </div>
         </footer>
     )
 }
