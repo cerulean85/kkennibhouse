@@ -45,7 +45,7 @@ export default function CommonSection({
     return (
         <section>
             <div className="ly_section">
-                <div style={{ width: `${fixedMainContentWidth}px`, userSelect: 'none' }}>
+                <div style={{ width: `${fixedMainContentWidth}px` }}>
                     <div className='section-main'>
                         {children}
                     </div>

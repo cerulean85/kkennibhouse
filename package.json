@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "-": "^0.0.1",
+    "@notionhq/client": "^2.2.15",
     "@reduxjs/toolkit": "^2.5.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "next": "15.1.0",
+    "notion-client": "^7.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.1",
+    "react-notion-x": "^7.2.5",
     "react-redux": "^9.2.0",
+    "react-syntax-highlighter": "^15.6.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
-    "sass": "^1.83.0"
+    "sass": "^1.83.0",
+    "save": "^2.9.0",
+    "styled-components": "^6.1.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
