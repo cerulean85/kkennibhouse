@@ -55,6 +55,7 @@ section {
 }
 
 .ly_section {
+  width: 100%;
   display: flex;
 }
 
@@ -62,6 +63,7 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-left: 17px;
 }
 
 .ly_about {
@@ -188,14 +190,15 @@ h2.mg-top {
 }
 
 .ly_dev-align {
+  width: 100%;
   margin-top: 30px;
   padding-left: 50px;
 
   @media (max-width: 768px) {
+    width: 100%;
     padding-left: 0px;
     text-align: center;
-  }
-  
+  }  
 }
 
 .ly_tech-align.mg-top {
@@ -314,6 +317,25 @@ h2.mg-top {
   }
 }
 
+.lv_post-align {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lv_post-align {
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 50px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+  }  
+}
+
+
 .tech-research-outer {
   width: 432px;
   height: 120px;
@@ -322,7 +344,7 @@ h2.mg-top {
   align-items: center;       /* 세로 중앙 정렬 */
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
   border-radius: 5px;
-  background-color: $header-bg-color;
+  background-color: $header-bg-color;  
 }
 
 .tech-research-inner {
@@ -408,14 +430,15 @@ h2.mg-top {
 .ly_article-listview {
   width: 100%;
   display: flex;
+  // padding: 20px;
 }
 
 .listview {
   width: 100%;
 
-  @media (max-width: 768px) {
-    width: 500px;
-  }
+  // @media (max-width: 768px) {
+  //   // width: 500px;
+  // }
 }
 
 .listview-desk {

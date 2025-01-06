@@ -71,7 +71,7 @@ export default function ArticleListViewComponent() {
             </div>
       
             {postList.length > 0 ? (
-            <div className='ly_dev-align'>
+            <div className='lv_post-align'>
                 {postList.map((item: any, index: number) => (
 
                   <div className='tech-research-outer' key={index}>
