@@ -55,7 +55,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <h2>주요 기술 스택</h2>
+        <h2 className='center'>주요 기술 스택</h2>
         <div className='ly_tech-align'>
           {techList.map((item: any, index: any) => (          
             <div className='tech-symbol-box' title={item.name}>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           ))}
         </div>
         
-        <h2 className='mg-top'>주요 경력</h2>
+        <h2 className='mg-top center'>주요 경력</h2>
         <div className='ly_tech-align'>
 
         {careerList.map((item: any, index: any) => (          
@@ -89,7 +89,7 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <h2 className='mg-top'>연구 실적</h2>
+        <h2 className='mg-top center'>연구 실적</h2>
         <div className='ly_tech-align'>
           {researchList.map((item: any, index: any) => (          
             <div className='tech-research-outer'>
@@ -110,7 +110,7 @@ export default function AboutPage() {
           ))}         
         </div>
 
-        <h2 className='mg-top'>주요 인증</h2>
+        <h2 className='mg-top center'>주요 인증</h2>
         <div className='ly_tech-align'>
           {certificateList.map((item: any, index: any) => (
             <div className='cert-symbol-box'>
