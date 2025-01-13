@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   eslint: {
     ignoreDuringBuilds: true
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/about',
+        permanent: true, // true: 301 리다이렉트, false: 302 리다이렉트
+      },
+    ];
   }
 };
 
