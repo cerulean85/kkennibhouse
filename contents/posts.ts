@@ -491,6 +491,35 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
 `
 
     },
+    
+    {
+        articleType: 'dev',
+        postId: 'dev-7',
+        title: 'SKU 기반 Stacker Crane 적치 최적화',
+        cover: '',
+        contents: `
+
+## 배경
+- AS/RS 창고에서 <strong>Stacker Crane(S/C)</strong>의 설비 효율을 높이고자 하는 요구가 증가
+- **유휴 시간**을 최소화하고 창고의 입출고 시간을 단축하기 위한 최적화 필요성 대두
+
+## 문제점
+- 기존 적치 방식은 단순히 상품의 **개수**만 비교하여 분산 적치
+- 이로 인해 동일 SKU(Stock Keeping Unit: 재고 관리 단위)의 상품이 특정 라인에 집중되며 S/C의 비효율적인 운행 발생
+
+## 해결 방안
+- 상품의 **SKU**를 기준으로 라인별 상품 비중을 분석하여 **균형 있게 분산 적치**
+- 동일 SKU의 상품은 **가장 적게 적치된 창고**를 우선적으로 선택하여 적치
+
+<img src='/images/dev/dev-7-1.png' width='100%'>
+
+## 결과
+- 모든 창고에 상품이 고르게 배치되면서 S/C의 **유휴 시간이 감소**
+- 설비 효율이 증가하고, 창고 입출고 과정의 속도도 크게 개선됨
+
+`
+    },
+
     {
         articleType: 'dev',
         postId: 'dev-8',
@@ -534,30 +563,78 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
 
     {
         articleType: 'dev',
-        postId: 'dev-7',
-        title: 'SKU 기반 적치 최적화를 통한 설비 효율 향상',
+        postId: 'dev-9',
+        title: '로깅 자동화: 함수 인터페이스 변경 대응하기',
         cover: '',
         contents: `
-
 ## 배경
-- AS/RS 창고에서 <strong>Stacker Crane(S/C)</strong>의 설비 효율을 높이고자 하는 요구가 증가
-- **유휴 시간**을 최소화하고 창고의 입출고 시간을 단축하기 위한 최적화 필요성 대두
+- 함수 호출 시 의도치 않은 파라미터 입력이나 결과 출력을 추적할 수 있는 로깅 기능이 필요함
 
 ## 문제점
-- 기존 적치 방식은 단순히 상품의 **개수**만 비교하여 분산 적치
-- 이로 인해 동일 SKU(Stock Keeping Unit: 재고 관리 단위)의 상품이 특정 라인에 집중되며 S/C의 비효율적인 운행 발생
+- 파이썬의 기본 로깅 모듈은 로그 형식과 파일 저장 기능은 제공하지만, 함수의 입출력값을 자동으로 추적하는 기능은 없음
+- 함수 파라미터가 변경될 때마다 로깅 코드의 매개변수를 수정해야 함
+- 수십 개의 함수에 로깅 코드를 삽입하면, 함수 인터페이스 변경에 따라 수정할 부분이 많아짐
+- 로깅 코드 작성 시 타이핑 실수로 인해 잘못된 데이터를 기록할 위험이 큼
+
+\`\`\`python
+# 로깅
+def log(func_name, *args, **kwargs):
+    cmm_logger.info("call: %s, args: %s, kwargs: %s", func_name, args, kwargs)
+
+# 로깅을 호출하는 함수1
+def test1(arg1, args2, args3):           
+    log("test1", arg1, args2, args3)
+    # 입력 I/F가 변경되면 수정 필요 
+
+# 로깅을 호출하는 함수2
+def test2(arg1, args2, args3, args4):
+    log("test2", arg1, args2, args3, args4) 
+    # 입력 I/F가 변경되면 수정 필요 
+
+# 로깅을 호출하는 함수3
+def test3(arg1, args2, args3, args4, args5):
+    log("test2", arg1, args2, args3, args4, args5)
+    # 입력 I/F가 변경되면 수정 필요     
+\`\`\`
 
 ## 해결 방안
-- 상품의 **SKU**를 기준으로 라인별 상품 비중을 분석하여 **균형 있게 분산 적치**
-- 동일 SKU의 상품은 **가장 적게 적치된 창고**를 우선적으로 선택하여 적치
+- 파이썬 데코레이터를 활용하여 로깅 패턴을 캡슐화
+- 로깅 코드를 일관되게 작성하고, 최소한의 코드로 실행 가능하도록 구현
 
-<img src='/images/dev/dev-7-1.png' width='100%'>
+\`\`\`python
+class PyLogger:
+    """Custom logging class to wrap and enhance logging functionality."""
+    def __init__(self, func=None):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        self.log(*args, **kwargs)
+        return self.func(*args, **kwargs)
+
+    def log(self, *args, **kwargs):
+        """Log a message with function name and arguments."""
+        func_name = getattr(self.func, "__name__", "-")
+        cmm_logger.info("call: %s, args: %s, kwargs: %s", func_name, args, kwargs)
+\`\`\`
 
 ## 결과
-- 모든 창고에 상품이 고르게 배치되면서 S/C의 **유휴 시간이 감소**
-- 설비 효율이 증가하고, 창고 입출고 과정의 속도도 크게 개선됨
+- 함수의 입력 인터페이스가 변경되어도 로깅 코드를 수정할 필요가 없음
 
-`
+\`\`\`python
+# 데코레이터를 이용한 로깅
+@PyLogger
+def test1(arg1, args2, args3):
+    pass
+
+@PyLogger
+def test2(arg1, args2, args3, args4):
+    pass
+
+@PyLogger
+def test3(arg1, args2, args3, args4, args5):
+    pass
+\`\`\`
+        `
     },
 
     {
