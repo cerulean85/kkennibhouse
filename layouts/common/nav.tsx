@@ -70,7 +70,7 @@ const CommonNav = () => {
                 <div className="profile">
                     <div className="left">
                         <img src="/images/profile_img.jfif"/>
-                        <h3><a onClick={() => movePage('') }className="home-link">깬닙하우스</a></h3>
+                        <h3><a onClick={() => movePage('about') }className="home-link">깬닙하우스</a></h3>
                     </div>
 
                     <div className="right">
