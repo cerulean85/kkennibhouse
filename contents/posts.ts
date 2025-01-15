@@ -37,7 +37,6 @@ export const posts: any = [
 
     `
     },
-
     {
         articleType: 'about',
         postId: 'HES',
@@ -70,7 +69,6 @@ export const posts: any = [
 
 `
     },
-
     {
         articleType: 'about',
         postId: 'WPF',
@@ -113,7 +111,6 @@ export const posts: any = [
         
 `
     },
-
     {
         articleType: 'about',
         postId: '학위논문',
@@ -161,8 +158,7 @@ export const posts: any = [
 - <a href="https://github.com/cerulean85/wctt" target="_blank">Github Repository</a>
         
 `
-    },
-        
+    }, 
     {
         articleType: 'about',
         postId: '분산처리',
@@ -193,9 +189,7 @@ export const posts: any = [
 - 용이한 배포 및 패키지 관리를 위한 도커를 통한 컨테이너화
 
 `
-        
     },
-
     {
         articleType: 'about',
         postId: '학습관리시스템',
@@ -225,13 +219,13 @@ export const posts: any = [
 
 <img src='/images/lms_mobile.png'>
 `
-        
     },
     {
         articleType: 'dev',
         postId: 'dev-1',
         title: '분산의 필요성',
         cover: '',
+        createAt: '2024-12-27 00:00:00',
         contents: `
 
 몇 년 전, 텍스트 마이닝 플랫폼을 운영하는 회사에서 근무한 적이 있다. 이 플랫폼(이하 'P')의 사용자는 브라우저를 통해 서비스에 접속하여 데이터 수집부터 분석에 이르는 파이프라인을 사용할 수 있었다. 시스템 구조는 여러 컴포넌트로 구성되어 있었으며, 사용자에게 UI/UX를 제공하는 웹 서버, 데이터 수집을 담당하는 크롤러, 전처리기, 사회연결망 분석을 수행하는 분석기 등이 주요 요소였다. 이 외에도 DB와 엘라스틱서치 같은 데이터 저장소들이 클라우드 상에서 실행되며 상호작용하는 SaaS 형태의 소프트웨어였다.
@@ -301,12 +295,12 @@ rpc:
 비록 당시에는 여러 가지 어려움이 있었지만, 그 경험을 통해 기술적 문제 해결뿐만 아니라, 운영 환경에서의 실용적인 접근법을 배우게 되었다. 그리고, 이런 개선 작업이 결국에는 서비스의 품질을 높이고, 사용자 경험을 향상시키는 데 큰 기여를 한다는 사실을 다시 한 번 깨달았다. 이러한 경험들이 쌓여 더 나은 기술 리더로 성장하는 밑거름이 되었다고 생각한다.
 `
     },
-
     {
         articleType: 'dev',
         postId: 'dev-2',
         title: '배포 방식의 결정',
         cover: '',
+        createAt: '2024-12-28 00:00:00',
         contents: `
 
 적어도 필자가 함께 일했던 개발자들은 배포를 염두에 두지 않고 개발하는 경우가 많았다. 이는 어쩌면 당연한 일이었을지도 모른다. 해야 할 개발 작업은 산더미 같고, 운영까지는 아직 시간이 남았으니, 배포까지 고려할 여유가 없었을 것이다. 필자 역시 운영 중인 시스템을 직접 담당하기 전까지는 개발 단계에서 배포를 함께 고민해야 한다는 사실을 깊이 깨닫지 못했으니, 누구를 탓할 자격도 없다.
@@ -332,6 +326,7 @@ rpc:
         postId: 'dev-3',
         title: '컨테이너의 필요성',
         cover: '',
+        createAt: '2024-12-29 00:00:00',
         contents: `
 
 <p align='center'>
@@ -374,6 +369,7 @@ docker run -d myapp/worker:latest
         postId: 'dev-4',
         title: '분산 처리: gRPC의 유용성',
         cover: '',
+        createAt: '2024-12-30 00:00:00',
         contents: `
 
 <img src='/images/symbol/18_grpc.png' height='300px'>
@@ -406,6 +402,7 @@ gPRC는 다양한 언어와 플랫폼에서 사용이 가능하고, RPC의 다�
         postId: 'dev-5',
         title: '형상 관리의 필요성',
         cover: '',
+        createAt: '2024-12-31 00:00:00',
         contents: `
 
 <p align='center'>
@@ -453,6 +450,7 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
         postId: 'dev-6',
         title: '처리 지연 모니터링 시스템',
         cover: '',
+        createAt: '2025-01-02 00:00:00',
         contents: `
         
 
@@ -497,6 +495,7 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
         postId: 'dev-7',
         title: 'SKU 기반 Stacker Crane 적치 최적화',
         cover: '',
+        createAt: '2025-01-12 00:00:00',
         contents: `
 
 ## 배경
@@ -525,6 +524,7 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
         postId: 'dev-8',
         title: 'SKU/LOT 기반 Gantry 적치 최적화',
         cover: '',
+        createAt: '2025-01-13 00:00:00',
         contents: `
 
 ## **배경**
@@ -566,6 +566,7 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
         postId: 'dev-9',
         title: '로깅 자동화: 함수 인터페이스 변경 대응하기',
         cover: '',
+        createAt: '2025-01-14 00:00:00',
         contents: `
 ## 배경
 - 함수 호출 시 의도치 않은 파라미터 입력이나 결과 출력을 추적할 수 있는 로깅 기능이 필요함
@@ -642,6 +643,7 @@ def test3(arg1, args2, args3, args4, args5):
         postId: 'essay-1',
         title: '독서의 이유',
         cover: '/images/essay_post1.jpg',
+        createAt: '2024-12-27 00:00:00',
         contents: `
 책을 많이 읽으면 좋다는 이야기를 듣지 않고 자란 사람이 있을까? 필자 역시 그 말을 교훈삼아 독서를 꾸준히 하려고 노력해왔지만 정작 누군가 독서의 이유를 알려달라고 하면 대답하기가 참 어렵다. 알면서도 말하지 못하는 그 상황이 답답해서 독서의 이유에 대해 정리를 해보았다.
 
@@ -674,6 +676,7 @@ def test3(arg1, args2, args3, args4, args5):
         postId: 'essay-2',
         title: '비틀즈의 고독',
         cover: '/images/pepper.jpg',
+        createAt: '2024-12-28 00:00:00',
         contents: `
 1960년대를 주름 잡았던 팝 아티스트인 비틀즈를 모르는 사람들은 아마 없을 것이다. 우리나라에는 비틀즈의 앨범을 찾아 듣지는 않아도 ‘Let it be’, ‘Yesterday’라는 곡이 대중에게 잘 알려져 있으니 비틀즈가 사랑 노래를 전문으로 부르는 점잖은 가수 정도로 여기는 사람들이 많다. 그러나 의외로 비틀즈는 록(rock) 가수이다. 우리나라로 치면 ‘김경호’와 같은 장르의 가수인 셈이다. 어쩐지 낯선 느낌이 들지만, 알고 보면 클래식을 제외하고 젊은 층이 즐겨 듣는 대중음악 대부분은 록에 기반을 두고 있다고 해도 과언이 아니다. 그만큼 록의 표현력은 다양하다.
 
@@ -704,6 +707,7 @@ def test3(arg1, args2, args3, args4, args5):
         postId: 'essay-3',
         title: '아이디어에 대하여',
         cover: '',
+        createAt: '2024-12-29 00:00:00',
         contents: `
 
 <img src='/images/essay/idea.jfif' height='200px'>
@@ -725,6 +729,7 @@ def test3(arg1, args2, args3, args4, args5):
         postId: 'essay-4',
         title: '이해와 창조에 대하여',
         cover:'',
+        createAt: '2024-12-30 00:00:00',
         contents: `
 
 공부란 무엇일까? 정확한 정의를 내릴 자신도 없고, 솔직히 꼭 알고 싶지도 않다. 다만 확실한 건, 공부를 통해 우리는 몰랐던 것을 깨닫고, 단순히 머릿속에 머물던 ‘지식’을 넘어서 ‘지혜’로 전환시켜야 한다는 점이다. 지혜란 지식을 응용할 수 있는 능력이자, 새로운 통찰을 얻는 과정에서 비로소 발현된다.  
@@ -744,6 +749,7 @@ def test3(arg1, args2, args3, args4, args5):
         articleType: 'essay',
         postId: 'essay-5',    
         title: '성취와 노력의 상관관계',
+        createAt: '2025-01-01 00:00:00',
         contents: `
 
 “매일매일이 쌓여 좋은 성과를 낸다”는 말에 대해 이제는 회의적이다. 단순하고 추상적인 이야기이지만, 한때는 이 말을 전혀 의심하지 않고 받아들였다. 그래서 매일 무던히 노력하고, 최선을 다해 살아가겠노라 다짐했지만, 다짐은 깨지라고 있는 것처럼 늘 배신당하기 일쑤였다.  
@@ -768,14 +774,12 @@ def test3(arg1, args2, args3, args4, args5):
      
 `
     },
-    
-
-    
     {
         articleType: 'books',
         postId: 'books-1',    
         title: '허무주의에 대한 오해',
         cover: '/images/books/차라투스트라표지.jpg',
+        createAt: '2025-01-01 00:00:00',
         contents: `
 
 ##  ‘차라투스트라는 이렇게 말했다’를 읽고
@@ -804,6 +808,7 @@ def test3(arg1, args2, args3, args4, args5):
         postId: "books-2",
         title: '요리 본능을 읽고',
         cover: '/images/books/요리본능표지.jpg',
+        createAt: '2025-01-02 00:00:00',
         contents: `    
 tvN 드라마 '철인왕후'를 보다 요리를 해보자는 생각에 요리책을 고르다 이 책을 알게 되었는데, 요리 방법에 관한 내용인 줄 알았는데 알고 보니 인류의 진화 과정을 요리와 관련하여 풀어쓴, 굉장히 학문적인 책이었다. 책이 배송되고 뜬금없는  목차에 잠깐 당황하고 첫 페이지를 읽었더니, 왠 걸? 내용이 상당히 흥미진진했다.  화식을 시작하면서 인류가 진화 과정에서 얻을 수 있었던 이득에 대한 주장과 증명에 대한 내용이 주를 이루고 있는데, 그 설명들이 하나같이 깨알같다. 
 
@@ -819,6 +824,7 @@ tvN 드라마 '철인왕후'를 보다 요리를 해보자는 생각에 요리�
         postId: "books-3",
         title: '데미안: 아프락사스',
         cover: '/images/books/요리본능표지.jpg',
+        createAt: '2025-01-05 00:00:00',
         contents: `    
  
 

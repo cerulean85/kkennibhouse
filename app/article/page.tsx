@@ -91,7 +91,7 @@ export default function ArticlePage() {
                   return (
                     <div style={{textAlign: "center"}}>
                       <img
-                        style={{ width: "50%", minWidth: "320px", marginTop:"20px" }}
+                        className="md-img"
                         src={props.src?.replace("../../../../public/", "/")}
                         {...props}
                         />

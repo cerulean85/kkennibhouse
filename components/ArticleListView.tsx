@@ -28,7 +28,14 @@ export default function ArticleListViewComponent() {
     setAuthor(page['author']);
     setThumbnail(page['thumbnail']);
 
-    const searched = posts.filter((item: any) => item['articleType'] == currentMenu);
+    let searched = posts
+      .filter((item: any) => item['articleType'] === currentMenu)
+      .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
+
+    searched = searched.map((item: any) => { 
+      item.createAt = item.createAt.split(' ')[0];
+      return item;
+    });
     setPostList(searched);
     setPostCount(searched.length);
 
@@ -81,7 +88,7 @@ export default function ArticleListViewComponent() {
                       </div>
 
                       <div className='txt-box'>
-                        <div className='corp-box'>{capitalizeFirstLetter(item['articleType'])}</div>
+                        <div className='corp-box'>{capitalizeFirstLetter(item['createAt'])}</div>
                         <div className='topic-box'>
                           <a onClick={() => moveDetail(item['postId'])}>
                           {item['title']}
