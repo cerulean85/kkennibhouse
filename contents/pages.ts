@@ -107,13 +107,13 @@ export const pages: any = {
             {
                 type: 'dynamodb',
                 name: 'DynamoDB',
-                symbol: '17_dynamodb.png',
+                symbol: '17_dynamodb.svg',
                 link: 'https://en.wikipedia.org/wiki/Amazon_DynamoDB'
             },
             {
                 type: 'grpc',
                 name: 'gRPC',
-                symbol: '18_grpc.png',
+                symbol: '18_grpc.svg',
                 link: 'https://en.wikipedia.org/wiki/GRPC'
             },
             {
