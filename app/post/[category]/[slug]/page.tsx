@@ -27,15 +27,8 @@ export async function generateStaticParams() {
   return paths;
 }
 
-type PageProps = {
-  params: {
-    category: string;
-    slug: string;
-  };
-};
-
 // 페이지 컴포넌트
-export default function PostPage({ params }: PageProps) {
+export default function PostPage({ params }: any) {
   const { category, slug } = params;
 
   // 파일 읽기
