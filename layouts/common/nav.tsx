@@ -28,6 +28,7 @@ const CommonNav = () => {
         setIsEssay(currentMenu == 'essay');
         setIsBooks(currentMenu == 'books');
         setIsSearch(currentMenu == 'search');
+        setIsArchive(currentMenu == 'archive');
     }, [currentMenu])
 
     const [isAbout,  setIsAbout]  = useState(false);
@@ -35,6 +36,7 @@ const CommonNav = () => {
     const [isEssay,  setIsEssay]  = useState(false);
     const [isBooks,  setIsBooks]  = useState(false);
     const [isSearch,  setIsSearch]  = useState(false);
+    const [isArchive,  setIsArchive]  = useState(false);
 
     const pathname = usePathname();
 
@@ -47,6 +49,7 @@ const CommonNav = () => {
         { name: "Dev.", endpoint: 'dev', state: isDev },
         { name: "Essay", endpoint: 'essay', state: isEssay },
         { name: "Books", endpoint: 'books', state: isBooks },
+        { name: "Archive", endpoint: 'archive', state: isArchive },
     ]
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);

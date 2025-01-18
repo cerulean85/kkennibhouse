@@ -282,5 +282,13 @@ export const pages: any = {
         message: '"책이 없는 방은 영혼 없는 육체와 같다."',
         author: '- 키케로',
         thumbnail: '/images/books.png'
-    }
+    },
+
+    archive: {
+        name: 'Archive',
+        subname: '기록 보관소',
+        message: '"가장 흐린 잉크가 가장 좋은 기억보다 낫다.."',
+        author: '- Chinese Proverb',
+        thumbnail: '/images/archive.jpg'
+    },
 }

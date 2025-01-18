@@ -1,58 +1,62 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import { posts } from '@/contents/posts'
-import { useSearchParams } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import { setMenu } from '@/stores/currentMenuSlice'
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '@/stores/store';
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import remarkGfm from "remark-gfm";
 
-import NotionViewComponent from '@/components/notion/NotionView';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-const ArticlePage = () => {
-  const searchParams = useSearchParams();
-  const from: string = searchParams.get('from') ?? '';
-  const postId: string = searchParams.get('postId') ?? '';
-  const post = posts.find((item: any) => (item['articleType'] == from) && (item['postId'] == postId));
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const categories = fs.readdirSync(postsDirectory);
 
-  const title: string = post.title;
-  const contents: string = post.contents;
-  const cover: string = post.cover;
-  const [markdownText, setMarkdownText] = useState('');
-  const dispatch: AppDispatch = useDispatch();
+  const paths = [];
 
-  const editType: string = post.editType;
-  const pageId: string = post.contents;
-  
-  useEffect(() => {
-    dispatch(setMenu(from));
-  })
+  for (const category of categories) {
+    const categoryPath = path.join(postsDirectory, category);
+    const files = fs.readdirSync(categoryPath);
 
-  useEffect(() => { 
-    setMarkdownText(contents);
-  }, [contents])
-  
+    for (const file of files) {
+      const slug = file.replace('.md', '');
+      paths.push({ category, slug });
+    }
+  }
+
+  return paths;
+}
+
+type PageProps = {
+  params: {
+    category: string;
+    slug: string;
+  };
+};
+
+// 페이지 컴포넌트
+export default function PostPage({ params }: PageProps) {
+  const { category, slug } = params;
+
+  // 파일 읽기
+  const filePath = path.join(process.cwd(), 'posts', category, `${slug}.md`);
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+
+  // Frontmatter와 콘텐츠 분리
+  const { data, content } = matter(fileContent);
+
   return (
-
-    <div className='ly_article'>            
+    <div className='ly_article'>
       <div className='article-content'>
         <div className='ly_article-title'>
           <div className='inner'>
             <img src='/images/icon/file_shape_24.png' className='icon'/>
-            <div className='title'>{title}</div>
+            <div className='title'>{data.title}</div>
           </div>
         </div>
         <hr/>
         <div className='contents'>
-          <div className='preview'>
-
-            { editType === 'md' ? 
-            
-            
+          <div className='preview'>      
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
@@ -126,24 +130,15 @@ const ArticlePage = () => {
                 }
               }}
             >
-              {markdownText
+              {content
                 .replace(/\n/gi, "\n\n")
                 .replace(/\*\*/gi, "@$_%!^")
                 .replace(/@\$_%!\^/gi, "**")
                 .replace(/<\/?u>/gi, "*")}
             </ReactMarkdown>
-
-            :
-            
-            <NotionViewComponent pageId={pageId}></NotionViewComponent>
-
-            }
           </div>
         </div>
       </div>
     </div>
   )
 }
-
-
-export default ArticlePage;

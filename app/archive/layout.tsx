@@ -1,4 +1,4 @@
-export default function DevLayout({
+export default function ArchiveLayout({
     children,
   }: Readonly<{
     children: React.ReactNode;

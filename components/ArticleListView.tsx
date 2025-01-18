@@ -23,7 +23,7 @@ export default function ArticleListViewComponent() {
 
   useEffect(() => { 
 
-    const pageCase = ['dev', 'essay', 'books'];    
+    const pageCase = ['dev', 'essay', 'books', 'archive'];    
     if(!pageCase.includes(currentMenu)) return;
 
     const page = pages[currentMenu];
@@ -50,7 +50,7 @@ export default function ArticleListViewComponent() {
   }, [currentMenu])
 
   const moveDetail = (postId: string) => {
-    window.open(`/article?from=${encodeURIComponent(currentMenu)}&postId=${encodeURIComponent(postId)}`, '_blank');
+    window.open(`/post/${encodeURIComponent(currentMenu)}/${encodeURIComponent(postId)}`, '_blank');
   }
 
   const capitalizeFirstLetter = (txt: string) => {
@@ -107,7 +107,7 @@ export default function ArticleListViewComponent() {
                             }
                             {item['title']}
                           </div>
-                          <div className='card-date'><span>작성일:&nbsp;</span>2023-01-31</div>
+                          <div className='card-date'><span>작성일:&nbsp;</span>{item.createAt}</div>
                         </div>
                       </div>
                     </a>
