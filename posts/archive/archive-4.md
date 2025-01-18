@@ -5,36 +5,6 @@ tags: CSharp, C#
 category: Program Language
 ---
 
-
-- [LINQ(Language Integrated Query)](#linqlanguage-integrated-query)
-  - [문법](#문법)
-    - [from ](#from)
-    - [where](#where)
-    - [orderby](#orderby)
-    - [select](#select)
-    - [LINQ 쿼리식 예시](#linq-쿼리식-예시)
-    - [메소드 호출 방식 예시](#메소드-호출-방식-예시)
-    - [Join 예시](#join-예시)
-  - [비교](#비교)
-  - [GUID 생성](#guid-생성)
-  - [Enum](#enum)
-    - [Enum To String](#enum-to-string)
-    - [String To Enum](#string-to-enum)
-- [Null 처리](#null-처리)
-  - [코드정리 및 설명 필요](#코드정리-및-설명-필요)
-- [String 처리](#string-처리)
-  - [bool.TryParse](#booltryparse)
-- [ExpandObject](#expandobject)
-- [switch구문 람다식으로 표현](#switch구문-람다식으로-표현)
-  - [객체 초기화자(Initializer)](#객체-초기화자initializer)
-  - [Keyward Arguments](#keyward-arguments)
-- [변수 일렬로 선언](#변수-일렬로-선언)
-- [switch/when](#switchwhen)
-- [Random 번호 생성](#random-번호-생성)
-- [Trace 로그 출력](#trace-로그-출력)
-- [ConcurrentDictionary](#concurrentdictionary)
-
-
 ## List 조회
 - 코딩 전에 <font color="red"><b>[이 사이트](https://learn.microsoft.com/ko-kr/dotnet/api/system.linq.enumerable.thenby?view=net-8.0)</b></font>에서 필요한 커맨드를 확인해서 이용할 것!!
 - <font color="yellow">**커맨드 잘 사용하면 코드량을 엄청 줄일 수 있음!!**</font>
