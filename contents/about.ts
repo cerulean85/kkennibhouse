@@ -237,18 +237,7 @@ export const data: any = {
 - 모바일 퍼스트 시대에 맞춰 모바일 학습 앱 개발/ 운영하여 고객 서비스 만족도 향상
 
 
-    ![-](/images/lms_mobile.png)
-`
-        
-    },
-
-    모바일앱: {
-        title: `모바일앱 개발`,
-        cover: '',
-        contents: `
-        
-모바이랭ㅂ
-
+    
 `
         
     }

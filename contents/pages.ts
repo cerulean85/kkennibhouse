@@ -167,7 +167,7 @@ export const pages: any = {
         ],
         career: [
             {
-                postId: 'HES',
+                postId: 'about-1',
                 symbol: '27_logistics.png',
                 title: '물류 자동화<br/>S/W 연구개발',
                 corpName: '한화모멘텀(주)',
@@ -175,7 +175,7 @@ export const pages: any = {
                 corpWorktime: '2023 - 재직중'
             },
             {
-                postId: '플랫폼개발운영',
+                postId: 'about-2',
                 symbol: '28_bigdata.png',
                 title: '빅데이터 분석<br/>플랫폼 연구개발',
                 corpName: '(주)더아이엠씨',
@@ -183,7 +183,7 @@ export const pages: any = {
                 corpWorktime: '2021 - 2023'
             },
             {
-                postId: '학습관리시스템',
+                postId: 'about-3',
                 symbol: '29_elearning.png',
                 title: '학습관리시스템<br/>유지관리 및 고도화',
                 corpName: '한국기술교육대학교',
@@ -195,7 +195,7 @@ export const pages: any = {
             {
                 journal: '학위논문(석사), 2022',
                 title: '태그 경로 및 텍스트 출현 빈도 기반 웹 크롤링 시스템',
-                link: 'https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=42dd4ee97ddd35eaffe0bdc3ef48d419&keyword=%ED%83%9C%EA%B7%B8%20%EA%B2%BD%EB%A1%9C'
+                link: 'https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=42dd4ee97ddd35eaffe0bdc3ef48d419&keyword=%ED%83%9C%EA%B7%B8%20%EA%B2%BD%EB%A1%9C'                
             },
             {
                 journal: '한국정보통신학회, 2021',

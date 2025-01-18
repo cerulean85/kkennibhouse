@@ -50,6 +50,7 @@ body {
 }
 
 section {
+  width: 100%;
   display: flex;             /* flexbox로 배치 */
   justify-content: space-between; /* 두 div 사이에 공간을 고르게 배치 */
 }
@@ -323,18 +324,123 @@ h2.mg-top {
 .lv_post-align {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.lv_post-align {
   width: 100%;
   margin-top: 30px;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-right: 0px;
-    text-align: center;
-  }  
+  .card {
+    width: 300px;
+    height: 330px;
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: calc((100% - 20px) / 2);
+      height: 275px;
+    } 
+
+    .outer {
+      width: calc(100% - 20px);
+      height: 100%;
+    }
+
+    .inner {
+      width: 100%;
+      height: calc(100% - 20px);
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+      border-radius: 10px;
+      
+
+      .thumbnail {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: $header-bg-color;
+
+        @media (max-width: 768px) {
+          height: 160px;
+        }
+
+        .ext-image {
+          width: 100%;
+          height: 200px;
+
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+
+          @media (max-width: 768px) {
+            height: 160px;
+          } 
+        }
+
+        .fit-cover {
+          object-fit: cover;
+        }
+
+        .fit-hidden {
+          object-fit: hidden;
+        }
+
+        .no-image {
+          width: 160px;
+
+          @media (max-width: 768px) {
+            width: 128px;
+          } 
+        }
+      }
+
+      .card-title {
+        width: calc(100% - 30px);
+        height: 55px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 최대 2줄로 제한 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 15px;
+        padding-right: 5px;
+        padding-top: 10px;
+        font-size: 1.2em;
+
+        @media (max-width: 768px) {
+          max-height: 50px;
+          font-size: 1.0em;
+        }
+
+        span {
+          color: $primary-color;
+        } 
+      }
+
+      .card-date {
+        height: 10px;
+        color: $header-menu-hover-color;
+        padding-top: 7px;
+        font-size: 1.0em;
+        margin-right: 15px;
+        text-align: right;
+        
+        @media (max-width: 768px) {
+          padding-top: 5px;
+          margin-left: 15px;
+          margin-right: 0px;
+          font-size: 0.8em;
+          text-align: left;
+        } 
+
+        span {
+          @media (max-width: 768px) {
+            display: none;
+          } 
+        }
+      }       
+    }
+  }
 }
 
 
@@ -439,12 +545,12 @@ h2.mg-top {
 
 .listview {
   width: 100%;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  // padding-right: 20px;
+  // padding-bottom: 20px;
 
-  @media (max-width: 768px) {
-    padding-right: 0px;
-  }
+  // @media (max-width: 768px) {
+  //   padding-right: 0px;
+  // }
 }
 
 .listview-desk {
@@ -511,8 +617,9 @@ h2.mg-top {
 .listview .header {
   width: 100%;
   align-items: center; /* 수직으로 가운데 정렬 */
+  justify-content: center;
   display: none;  
-  padding-left: 20px;
+  // padding-left: 20px;
   padding-right: 20px;
   padding-top: 30px;
 

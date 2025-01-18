@@ -5,6 +5,10 @@ import { pages } from '@/contents/pages'
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 
+type SubTypes = {
+  [key: string]: {[value: string]: string;};
+};
+
 export default function ArticleListViewComponent() {
 
   const currentMenu: string = useSelector((state: RootState) => state.currentMenu.menu);
@@ -15,6 +19,7 @@ export default function ArticleListViewComponent() {
   const [thumbnail, setThumbnail] = useState('');
   const [postCount, setPostCount] = useState(0);
   const [postList, setPostList] = useState([]);
+  const [subTypes, setSubTypes] = useState<SubTypes>({});
 
   useEffect(() => { 
 
@@ -38,6 +43,9 @@ export default function ArticleListViewComponent() {
     });
     setPostList(searched);
     setPostCount(searched.length);
+
+    console.log(searched);
+    setSubTypes({ 'dev': { 'share': '공유', 'contribute': '기여'} });
 
   }, [currentMenu])
 
@@ -81,24 +89,29 @@ export default function ArticleListViewComponent() {
             <div className='lv_post-align'>
                 {postList.map((item: any, index: number) => (
 
-                  <div className='tech-research-outer' key={index}>
-                    <div className='tech-research-inner'>
-                      <div className='thumb-box'>
-                        <img src='/images/icon/file_shape_128.svg'></img>
-                      </div>
-
-                      <div className='txt-box'>
-                        <div className='corp-box'>{capitalizeFirstLetter(item['createAt'])}</div>
-                        <div className='topic-box'>
-                          <a onClick={() => moveDetail(item['postId'])}>
-                          {item['title']}
-                          </a>
+                  <a className='card' onClick={() => moveDetail(item['postId'])}>
+                    {/* <a onClick={() => moveDetail(item['postId'])}> */}
+                      <div className='outer'>
+                        <div className='inner'>
+                          <div className='thumbnail'>
+                            <img 
+                              className={ [ 
+                                  (item.cover === '' ? 'no-image' : 'ext-image'), 
+                                  (item.fit === 'hidden' ? 'fit-hidden' : 'fit-cover')
+                                ].filter(Boolean).join(' ')}
+                              src={ item.cover === '' ? '/images/icon/thumbnail.svg' : item.cover}></img>
+                          </div>
+                          <div className='card-title'>
+                            { item.subType !== '' && 
+                              <span>[{subTypes[item.articleType][item.subType]}]&nbsp;</span>
+                            }
+                            {item['title']}
+                          </div>
+                          <div className='card-date'><span>작성일:&nbsp;</span>2023-01-31</div>
                         </div>
-                      </div>          
-                    </div>        
-                  </div>
-
-
+                      </div>
+                    </a>
+                  // </div>
                 ))}
             </div>            
             ) : (<div className='no-item'>항목이 존재하지 않습니다.</div>)}
@@ -106,3 +119,20 @@ export default function ArticleListViewComponent() {
     </div>
   )
 }
+
+                  // <div className='tech-research-outer' key={index}>
+                  //   <div className='tech-research-inner'>
+                  //     <div className='thumb-box'>
+                  //       <img src='/images/icon/file_shape_128.svg'></img>
+                  //     </div>
+
+                  //     <div className='txt-box'>
+                  //       <div className='corp-box'>{capitalizeFirstLetter(item['createAt'])}</div>
+                  //       <div className='topic-box'>
+                  //         <a onClick={() => moveDetail(item['postId'])}>
+                  //         {item['title']}
+                  //         </a>
+                  //       </div>
+                  //     </div>          
+                  //   </div>        
+                  // </div>

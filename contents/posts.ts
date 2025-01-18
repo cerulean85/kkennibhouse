@@ -1,61 +1,84 @@
 export const posts: any = [
     {
         articleType: 'about',
-        postId: '플랫폼개발운영',
+        postId: 'about-1',
         title: '빅데이터 분석 플랫폼 개발/운영',
         cover: '',
         contents: `
 
-## 1. [빅데이터 분석 플랫폼 TEXTOM](https://textom.co.kr/about/overview) 개발
+## 1. 주요업무 및 역할
+- (주)더아이엠씨 AI, Big Data R&D 및 R&D 사업 기획
+- 빅데이터 분석 플랫폼 기획 및 설계, 개발
+        
+## 2. 업무 성과
+**1) <a href='https://theimc.co.kr/web/php/sub/ser_textom.php' target='_blank'>SaaS 빅데이터 분석 플랫폼(Textom) 시스템</a> 최적화**
+- 데이터 처리 지연에 의한 월별 이슈 발생률 0.05% 이하 달성
+- 사용자 요청의 처리 시간 최소화 → 데이터 수집 및 분석 목표 시간(24시간 이내) 달성
+- 분산처리, 컨테이너화, 마이크로서비스 아키텍처 등 시스템 구조 개선
+
+**2) AI 교육 학습관리 시스템(AI Edutom) 개발 및 최적화**
+- 구글 Quick, Draw! 스케치 데이터 기반의 <a href='https://aiedutom.co.kr/views/_layout/intro/file/learn_sketch.pdf' target='_blank'>AI 교육 웹 서비스(쓱싹캐치)</a> 개발
+- 전체 시스템 가용성 99.5% 달성, 트래픽 급증 기간 장애건수 0건 달성
+- 클라우드 도입 및 로드밸런싱 솔루션 구현
+
+**3) 부산시교육청 빅데이터 분석(부산에듀빅) 플랫폼 구축 및 운영**
+- 데이터베이스 설계 및 웹 풀스택 개발
+- 분산처리 시스템 구현, 동시 처리 성능 향상 → 트래픽 급증 기간 장애건수 0건 달성
+- 중/고등학교 대상 서비스 시범 운영 성공
+`
+        
+//         `
+
+// ## 1. [빅데이터 분석 플랫폼 TEXTOM](https://textom.co.kr/about/overview) 개발
 
 
-![텍스톰파이프라인](/images/textom_pipeline.png)
+// ![텍스톰파이프라인](/images/textom_pipeline.png)
 
-- 방대하고 복잡한 텍스트 자료를 분석할 수 있는 빅데이터 분석 솔루션
+// - 방대하고 복잡한 텍스트 자료를 분석할 수 있는 빅데이터 분석 솔루션
 
-- 웹을 통해 데이터의 수집부터 정제, 매트릭스, 감성분석, 시각화 결과물까지 데이터를 간편하게 처리할 수 있는 서비스
+// - 웹을 통해 데이터의 수집부터 정제, 매트릭스, 감성분석, 시각화 결과물까지 데이터를 간편하게 처리할 수 있는 서비스
 
-- **역할/성과**
+// - **역할/성과**
 
-    - S/W 구조 개선, S/W 품질 개선
+//     - S/W 구조 개선, S/W 품질 개선
 
-    - MSA 도입, 수집/분산 네트워크 설계 및 구현
+//     - MSA 도입, 수집/분산 네트워크 설계 및 구현
 
-## 2. [AI 학습 플랫폼 AI Edutom](https://aiedutom.co.kr) 개발
+// ## 2. [AI 학습 플랫폼 AI Edutom](https://aiedutom.co.kr) 개발
 
-![AI에듀톰파이프라인](/images/aiedutom_pipeline.png)
+// ![AI에듀톰파이프라인](/images/aiedutom_pipeline.png)
 
-- 학생들에게 재미있는 콘텐츠를 통해 AI를 어떻게 활용할 수 있는지 알려주는 단계적 플랫폼
+// - 학생들에게 재미있는 콘텐츠를 통해 AI를 어떻게 활용할 수 있는지 알려주는 단계적 플랫폼
 
-- 수학, 코딩, 통계에 대한 지식 없이 체계적으로 AI의 원리를 이해하고 나만의 인공지능을 만들 수 있음
+// - 수학, 코딩, 통계에 대한 지식 없이 체계적으로 AI의 원리를 이해하고 나만의 인공지능을 만들 수 있음
 
-- **역할/성과**
+// - **역할/성과**
 
-    - 신규 서비스 개발, S/W 고도화 및 품질 개선
+//     - 신규 서비스 개발, S/W 고도화 및 품질 개선
 
-    - 로드밸런싱, 분산처리를 통한 병목 해결, 동시 수용 인원 증가
+//     - 로드밸런싱, 분산처리를 통한 병목 해결, 동시 수용 인원 증가
 
-## 3. 부산시교육청 에듀빅 개발 및 운영
--
--
+// ## 3. 부산시교육청 에듀빅 개발 및 운영
+// -
+// -
 
-## 4. 한국잡월드 빅데이터랩 개발
-- 시스템 아키텍처 및 DB 설계
-- 데이터 분석 서버 개발
+// ## 4. 한국잡월드 빅데이터랩 개발
+// - 시스템 아키텍처 및 DB 설계
+// - 데이터 분석 서버 개발
 
-## 5. K-Data 글로벌 사업 과제 책임
+// ## 5. K-Data 글로벌 사업 과제 책임
 
-    `
+//     `
     },
     {
         articleType: 'about',
-        postId: 'HES',
+        postId: 'about-2',
         title: `물류 자동화 및 효율화를 위한 프로젝트`,
         cover: '',
         contents: `
 
 ## 1. 주요업무 및 역할
-- 물류 제어 S/W 개발
+- 한화모멘텀(주) 물류 제어 S/W 개발
 - 물류(타이어, 이차전지 등) 모니터링 및 관제 시스템 설계
 - 열 처리 장비 레시피 자동 추천 시스템 개발
 
@@ -75,160 +98,41 @@ export const posts: any = [
     },
     {
         articleType: 'about',
-        postId: 'WPF',
-        title: 'WPF(Windows Presentation Foundation)',
-        cover: '',
-        contents: `
-        
-## 개요
-- 마이크로소프트가 개발한 데스크톱 애플리케이션 개발 프레임워크로 .NET 기술 스택의 일부
-
-- 풍부한 UI 구현을 위해 디자인과 코드의 분리를 목표로 하며, 사용자 경험(UX)을 강화하는 데 중점을 둠
-
-
-## 특징
-
-### 1. XAML 기반 선언적 프로그래밍
-- UI를 정의하기 위해 **XAML(Extensible Application Markup Language)**을 사용
-
-- XAML은 XML 기반의 언어로, UI 요소를 선언적으로 작성할 수 있어 디자인과 로직을 분리
-
-### 2. MVVM 패턴 지원
-- **MVVM(Model-View-ViewModel)** 디자인 패턴을 권장하여 UI(View)와 비즈니스 로직(ViewModel)을 분리
-
-- 이를 통해 코드 유지보수성과 재사용성이 높아짐
-
-### 3. 벡터 그래픽 지원
-- WPF는 벡터 기반의 그래픽 엔진을 사용하여 화면 크기에 관계없이 고품질 그래픽을 제공
-
-- 2D, 3D 그래픽, 애니메이션, 비디오 등 다양한 멀티미디어를 지원
-
-### 4. 강력한 데이터 바인딩
-- 데이터 바인딩을 통해 UI 요소와 데이터 소스를 연결
-
-- 이를 통해 동적 UI 업데이트 및 코드 간소화를 제공
-
-### 5. 스타일 및 템플릿 시스템
-- 스타일과 컨트롤 템플릿을 통해 UI의 외관을 쉽게 커스터마이징할 수 있음
-
-- ResourceDictionary를 활용해 UI 디자인을 재사용할 수 있음
-        
-`
-    },
-    {
-        articleType: 'about',
-        postId: '학위논문',
-        title: "AI/ML 데이터 분석 플랫폼 연구",
+        postId: 'about-3',
+        title: `학습관리시스템 유지관리 및 고도화`,
         cover: '',
         contents: `
 
-## 1. 개요
+## 1. 주요업무 및 역할
 
-- 복잡하게 구성된 HTML 문서에서 유의미한 콘텐츠 추출을 자동화하는 방법을 연구하였음 
+<img src='/images/about/about-1-1.png'>
 
-- 웹 크롤링으로 수집한 HTML문서에 나타나는 태그 경로의 패턴을 이용하여 데이터셋을 만듦
-
-- 태그 경로 패턴을 학습한 AI/ML 모델을 이용하여 새롭게 수집한 HTML문서에서 콘텐츠를 추출
-
-- Decision Tree, Random Forest, XGBoost, RNN, LSTM 등 다양한 AI/ML모델의 성능 비교 실험 수행
-
-- 웹 크롤링을 통해 HTML문서를 수집부터 콘텐츠 추출에 이르는 파이프라인을 시스템으로 구현하였음
-
-![페이퍼_아키텍처](/images/paper_arc.png)
-
-## 2. 논문
-### 1) [빈도 분석을 이용한 HTML 텍스트 추출(2021, 한국정보통신학회)](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202128640518155&dbt=JAKO&koi=KISTI1.1003%2FJNL.JAKO202128640518155)
-
-- HTML태그와 스타일 속성을 명시하지 않고 웹 페이지에서 출현하는 텍스트의 빈도를 이용하여 본문을 추출하는 방법을 제안
-
-- 수집된 모든 웹 페이지의 DOM 트리에서 텍스트를 추출하여 텍스트의 출현 빈도를 분석한 후, 출현 빈도가 높은 텍스트를 제외시킴으로써 본문을 추출하였으며, 본 연구에서 제안한 방법과 기존 방법의 정확도 비교를 통해서 본 연구에서 제안한 방법의 우수성을 검증하였음
-
-### 2) [태그 경로 및 텍스트 출현 빈도를 이용한 HTML 본문 추출(2021, 한국정보통신학회)](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202102661348107&oCn=JAKO202102661348107&dbt=JAKO&journal=NJOU00431883)
-
-- 웹 페이지 구성에 따른 성능편차가 크다는 1의 연구의 한계를 보완하기 위해 텍스트의 출현 빈도뿐만 아니라 웹 페이지의 DOM 트리로부터 추출된 텍스트 노드의 부모 태그 경로를 분석하여 다양한 수집 채널에서 높은 정확도로 본문을 추출하는 방법을 제안하였음
-
-### 3) [WCTT: HTML 문서 정형화 기반 웹 크롤링 시스템(2022, 한국정보통신학회)](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202212462666743&dbt=JAKO&koi=KISTI1.1003%2FJNL.JAKO202212462666743)
-
-- 2의 방법으로 HTML 문서를 정형화하여 하나의 수집 로직으로 본문을 수집하는 웹 크롤링 시스템인 WCTT(Web Crawling system based on Tag path and Text appearance frequency)를 설계 및 구현하였음
-
-- WCTT는 모든 수집 채널에서 동일한 로직으로 본문을 수집하므로 유지 관리 및 수집 채널의 확장이 용이하며, 키워드 네트워크 분석 등을 위해 불용어를 제거하고 명사만 추출하는 전처리 기능도 제공
-
-![-](/images/wctt.png)
-
-### 4) [태그 경로 및 텍스트 출현 빈도 기반 웹 크롤링 시스템(2022, 학위논문)](https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=42dd4ee97ddd35eaffe0bdc3ef48d419&keyword=%ED%83%9C%EA%B7%B8%20%EA%B2%BD%EB%A1%9C)
-
-- 1~3을 통합한 학위논문으로, 투고 논문의 지면 한계로 적을 수 없었던 상세한 설명과 사회연결망 분석 등의 네트워크 분석에서의 활용 가능성을 서술하였음
-
-- <a href="https://github.com/cerulean85/wctt" target="_blank">Github Repository</a>
-        
-`
-    }, 
-    {
-        articleType: 'about',
-        postId: '분산처리',
-        title: `분산 처리 연구 및 적용`,
-        cover: '',
-        contents: `
-        
-## 1. AS-IS 구조 개선
-
-- 특정 사용자 요청을 모두 처리 후 다음 사용자 요청 처리하는 AS-IS 구조 문제 해결
-
-![-](/images/textom_arc_better.png)
-
-- 사용자3은 사용자1, 2의 모든 요청 처리를 대기해야 함
-
-- 사용자 요청을 무작위로 처리하도록 Master/Worker 구조 도입
-
-![-](/images/textom_arc_better2.png)
-
-- 매니저서버가 작업을 총괄/제어함으로써 사용자 요청 처리 병렬화 
-
-## 2. MSA 도입 및 컨테이너화
-
-- 모놀리식 시스템 을해체하고시스템재설계, MSA 도입
-
-- gRPC 통신, Apache Kafak 등의 메시지 브로커 적용
-
-- 용이한 배포 및 패키지 관리를 위한 도커를 통한 컨테이너화
-
-`
-    },
-    {
-        articleType: 'about',
-        postId: '학습관리시스템',
-        title: `학습관리시스템 개발`,
-        cover: '',
-        contents: `
-        
-## 1. 한국기술교육대학교 온라인평생교육원 학습관리시스템 개발
-
-- 한국기술교육대학교 원격평생교육원과 원격교육연수원 학습관리시스템 개발 및 유지보수
-
-- 시스템 민원 처리 및 대응, 성능 향상 위한 쿼리 개발 및 리팩토링
-
-- SQL Injection, XSS, 정보누출, 암호화 및 인증 등 웹 보안 취약점 보완 및 대응
-
+- 한국기술교육대학교 학습시스템 개발 및 유지관리
 - 웹서버(apache), WAS서버(tomcat, weblogic) 운용 및 리소스 모니터링
+- 시스템 민원 처리, 웹 보안 취약점 보완 및 대응
+- 학습 소셜 네트워킹 서비스를 접목한 비형식 모바일 학습관리시스템 구축
 
-<img src='/images/lms_display.png'>
+<img src='/images/about/about-1-2.png'>
 
-## 2. 모바일 학습관리 앱 개발
+## 2. 업무 성과
+**1) 학습관리시스템 2식 운영, 고객 만족도 향상**
+- 원격평생교육원, 원격교육연수원 LMS의 풀스택(Full-Stack) 운용을 통한 빠른 장애 대응
+- 트래픽 급증 기간 시스템 기능 오류 및 지연 문의 건수 0건 달성
+- S/W 품질 향상으로 인한 사용자 3배 이상 증가
 
+**2) 모바일 학습관리 애플리케이션(클립러닝) 개발, 신규 가입자 증가**
+- 출시 후 20개월 동안 교육원 신규 가입자 1500명 증가
 - 푸시 알람 서비스를 통한 자동화된 학습 독려 운영 모델 구현
 
-- 학습 소셜 네트워킹 서비스를 접목한 비형식 모바일 시스템 구축
-
-- 모바일 퍼스트 시대에 맞춰 모바일 학습 앱 개발/ 운영하여 고객 서비스 만족도 향상
-
-<img src='/images/lms_mobile.png'>
 `
     },
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-1',
-        title: '[공유] 분산의 필요성',
-        cover: '',
+        title: '분산의 필요성',
+        cover: '/images/polling.png',
+        fit: 'cover',
         createAt: '2024-12-27 00:00:00',
         contents: `
 
@@ -301,9 +205,11 @@ rpc:
     },
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-2',
-        title: '[공유] 배포 방식의 결정',
+        title: '배포 방식의 결정',
         cover: '',
+        fit: 'cover',
         createAt: '2024-12-28 00:00:00',
         contents: `
 
@@ -327,9 +233,11 @@ rpc:
     
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-3',
-        title: '[공유] 컨테이너의 필요성',
-        cover: '',
+        title: '컨테이너의 필요성',
+        cover: '/images/symbol/25_docker.svg',
+        fit: 'cover',
         createAt: '2024-12-29 00:00:00',
         contents: `
 
@@ -370,18 +278,20 @@ docker run -d myapp/worker:latest
     
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-4',
-        title: '[공유] 분산 처리: gRPC의 유용성',
-        cover: '',
+        title: '분산 처리: gRPC의 유용성',
+        cover: '/images/symbol/18_grpc.svg',
+        fit: 'hidden',
         createAt: '2024-12-30 00:00:00',
         contents: `
 
-<img src='/images/symbol/18_grpc.png' height='300px'>
+<img src='/images/symbol/18_grpc.svg' height='300px'>
 
 분산 처리 기술은 십여 년 전 Google의 Hadoop을 통해 주목받기 시작하면서 빠르게 발전해 왔다. 특히, Apache Hadoop 생태계는 그 폭과 깊이를 확장하며 세분화되어 갔다. 이와 같은 변화 속에서 분산 환경에서의 효율적인 데이터 교환 기술이 중요한 화두로 떠올랐고, 그중 필자는 **gRPC**를 가장 선호한다. 이를 제대로 이해하기 위해서는 먼저 <strong>RPC(Remote Procedure Call)</strong>의 개념을 알아야 한다.
 
 <p align='center'>
-<img src='/images/dev/rpc.png' height='250px'>
+<img src='/images/dev/dev-4-1.png'>
 </p>
 
  RPC는 원격지에 위치하는 프로세스의 주소공간에 정의된 함수나 프로시저를 실행하여 프로세스 간의 통신을 수행하는 방법이다. RPC를 위해서는 IDL(Interface Definition Language)이라는 호출 규약이 정의되어야 한다. 서로 사양이 다른 두 프로세스가 통신을 하기 위해서는 IDL을 이용한 컴파일을 통해 클라이언트와 서버의 스터브(stub) 코드를 생성해야 한다. 스터브는 원격지의 프로세스를 대리하는 루틴으로, 클라이언트 혹은 서버의 객체를 대리하여 원격 프로세스의 요청을 받아들이고 응답을 전송한다. 또한 스터브는 객체가 요청한 데이터를 마샬링(marshaling)하여 상대방에게 전송하고, 작업이 완료된 데이터를 언마샬링(unmarshaling)하여 객체가 활용할 수 있는 형태로 변환한다.
@@ -403,9 +313,11 @@ gPRC는 다양한 언어와 플랫폼에서 사용이 가능하고, RPC의 다�
 
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-5',
-        title: '[공유] 형상 관리의 필요성',
-        cover: '',
+        title: '형상 관리의 필요성',
+        cover: '/images/symbol/26_git.svg',
+        fit: 'hidden',
         createAt: '2024-12-31 00:00:00',
         contents: `
 
@@ -451,9 +363,11 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
 
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-6',
-        title: '[공유] 처리 지연 모니터링 시스템',
-        cover: '',
+        title: '처리 지연 모니터링 시스템',
+        cover: '/images/dev/dev-6-1.png',
+        fit: 'cover',
         createAt: '2025-01-02 00:00:00',
         contents: `        
 
@@ -495,9 +409,11 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
     
     {
         articleType: 'dev',
+        subType: 'contribute',
         postId: 'dev-7',
-        title: '[기여] SKU 기반 Stacker Crane 적치 최적화',
-        cover: '',
+        title: 'SKU 기반 Stacker Crane 적치 최적화',
+        cover: '/images/dev/dev-7-1.png',
+        fit: 'cover',
         createAt: '2025-01-12 00:00:00',
         contents: `
 
@@ -524,9 +440,11 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
 
     {
         articleType: 'dev',
+        subType: 'contribute',
         postId: 'dev-8',
-        title: '[기여] SKU/LOT 기반 Gantry 적치 최적화',
-        cover: '',
+        title: 'SKU/LOT 기반 Gantry 적치 최적화',
+        cover: '/images/dev/dev-8-1.png',
+        fit: 'cover',
         createAt: '2025-01-13 00:00:00',
         contents: `
 
@@ -566,9 +484,11 @@ SCM은 단순히 코드를 저장하거나 관리하는 도구가 아니라, 개
 
     {
         articleType: 'dev',
+        subType: 'share',
         postId: 'dev-9',
-        title: '[공유] 함수 인터페이스 변경에 대응하는 로깅',
+        title: '함수 인터페이스 변경에 대응하는 로깅',
         cover: '',
+        fit: 'cover',
         createAt: '2025-01-14 00:00:00',
         contents: `
 ## 1. 배경
@@ -642,9 +562,11 @@ def test3(arg1, args2, args3, args4, args5):
     },
 {
     articleType: 'dev',
+    subType: 'contribute',
     postId: 'dev-10',
-    title: `[기여] 한화 ESG 스마트팩토리`,
-    cover: '',
+    title: `한화 ESG 스마트팩토리`,
+    cover: '/images/dev/dev-10-1.jpg',
+    fit: 'cover',
     createAt: '2025-01-14 00:00:00',
     contents: `
 
@@ -699,9 +621,11 @@ def test3(arg1, args2, args3, args4, args5):
 
     {
         articleType: 'essay',
+        subType: '',
         postId: 'essay-1',
         title: '독서의 이유',
         cover: '/images/essay_post1.jpg',
+        fit: 'cover',
         createAt: '2024-12-27 00:00:00',
         contents: `
 책을 많이 읽으면 좋다는 이야기를 듣지 않고 자란 사람이 있을까? 필자 역시 그 말을 교훈삼아 독서를 꾸준히 하려고 노력해왔지만 정작 누군가 독서의 이유를 알려달라고 하면 대답하기가 참 어렵다. 알면서도 말하지 못하는 그 상황이 답답해서 독서의 이유에 대해 정리를 해보았다.
@@ -732,9 +656,11 @@ def test3(arg1, args2, args3, args4, args5):
     },
     {
         articleType: 'essay',
+        subType: '',
         postId: 'essay-2',
         title: '비틀즈의 고독',
         cover: '/images/pepper.jpg',
+        fit: 'cover',
         createAt: '2024-12-28 00:00:00',
         contents: `
 1960년대를 주름 잡았던 팝 아티스트인 비틀즈를 모르는 사람들은 아마 없을 것이다. 우리나라에는 비틀즈의 앨범을 찾아 듣지는 않아도 ‘Let it be’, ‘Yesterday’라는 곡이 대중에게 잘 알려져 있으니 비틀즈가 사랑 노래를 전문으로 부르는 점잖은 가수 정도로 여기는 사람들이 많다. 그러나 의외로 비틀즈는 록(rock) 가수이다. 우리나라로 치면 ‘김경호’와 같은 장르의 가수인 셈이다. 어쩐지 낯선 느낌이 들지만, 알고 보면 클래식을 제외하고 젊은 층이 즐겨 듣는 대중음악 대부분은 록에 기반을 두고 있다고 해도 과언이 아니다. 그만큼 록의 표현력은 다양하다.
@@ -763,9 +689,11 @@ def test3(arg1, args2, args3, args4, args5):
     },
     {
         articleType: 'essay',
+        subType: '',
         postId: 'essay-3',
         title: '아이디어에 대하여',
-        cover: '',
+        cover: '/images/essay/idea.jfif',
+        fit: 'cover',
         createAt: '2024-12-29 00:00:00',
         contents: `
 
@@ -785,9 +713,11 @@ def test3(arg1, args2, args3, args4, args5):
 
     {
         articleType: 'essay',
+        subType: '',
         postId: 'essay-4',
         title: '이해와 창조에 대하여',
         cover:'',
+        fit: 'cover',
         createAt: '2024-12-30 00:00:00',
         contents: `
 
@@ -806,8 +736,11 @@ def test3(arg1, args2, args3, args4, args5):
         
     {
         articleType: 'essay',
+        subType: '',
         postId: 'essay-5',    
         title: '성취와 노력의 상관관계',
+        cover: '/images/essay/essay-5-1.png',
+        fit: 'hidden',
         createAt: '2025-01-01 00:00:00',
         contents: `
 
@@ -835,9 +768,11 @@ def test3(arg1, args2, args3, args4, args5):
     },
     {
         articleType: 'books',
+        subType: '',
         postId: 'books-1',    
         title: '허무주의에 대한 오해',
         cover: '/images/books/차라투스트라표지.jpg',
+        fit: 'cover',
         createAt: '2025-01-01 00:00:00',
         contents: `
 
@@ -864,9 +799,11 @@ def test3(arg1, args2, args3, args4, args5):
     },    
     {
         articleType: 'books',
+        subType: '',
         postId: "books-2",
         title: '요리 본능을 읽고',
         cover: '/images/books/요리본능표지.jpg',
+        fit: 'cover',
         createAt: '2025-01-02 00:00:00',
         contents: `    
 tvN 드라마 '철인왕후'를 보다 요리를 해보자는 생각에 요리책을 고르다 이 책을 알게 되었는데, 요리 방법에 관한 내용인 줄 알았는데 알고 보니 인류의 진화 과정을 요리와 관련하여 풀어쓴, 굉장히 학문적인 책이었다. 책이 배송되고 뜬금없는  목차에 잠깐 당황하고 첫 페이지를 읽었더니, 왠 걸? 내용이 상당히 흥미진진했다.  화식을 시작하면서 인류가 진화 과정에서 얻을 수 있었던 이득에 대한 주장과 증명에 대한 내용이 주를 이루고 있는데, 그 설명들이 하나같이 깨알같다. 
@@ -880,9 +817,11 @@ tvN 드라마 '철인왕후'를 보다 요리를 해보자는 생각에 요리�
     },
     {
         articleType: 'books',
+        subType: '',
         postId: "books-3",
         title: '데미안: 아프락사스',
-        cover: '/images/books/요리본능표지.jpg',
+        cover: '',
+        fit: 'cover',
         createAt: '2025-01-05 00:00:00',
         contents: `    
  
