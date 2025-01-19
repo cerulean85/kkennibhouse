@@ -1,25 +1,31 @@
-import React from 'react';
-import { getData } from '@/lib/notion';
-import Renderer from '@/components/notion/Renderer';
+'use client'
+import React, { useState, useEffect } from 'react';
+import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
 
-import 'react-notion-x/src/styles.css';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'katex/dist/katex.min.css';
+interface Post {
+  id: number;
+  title: string;
+}
 
+const ExamplePage = () => {
 
-const ExamplePage = async () => {
+  const [posts, setPosts] = useState<Post[] | null>(null);
 
-    const pageId = '1729e384125980ecb764d84ad120ec96';
-    const data = await getData(pageId);
-    console.log(data);
-  
-  
+  useEffect(() => {
+  //   // 데이터를 로드하는 시뮬레이션 (2초 딜레이)
+    setTimeout(() => {
+      setPosts([
+        { id: 1, title: 'Post 1' },
+        { id: 2, title: 'Post 2' },
+        { id: 3, title: 'Post 3' },
+      ]);
+    }, 10000);
+  }, []);
 
   return (
     <div>
-      
-      <Renderer recordMap={data} rootPageId={pageId} />
-
+      sssssss
+      {!posts && Array(3).fill(0).map((_, index) => <ArticleCardSkeletonLoader key={index} />)}
     </div>
   )
 };
