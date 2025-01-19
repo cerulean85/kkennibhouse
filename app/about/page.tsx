@@ -26,9 +26,6 @@ export default function AboutPage() {
   const researchList: any = page['research'];
   const certificateList: any = page['certificate'];
 
-  const moveDetail = (postId: string) =>
-    window.open(`/article?from=${encodeURIComponent(currentMenu)}&postId=${encodeURIComponent(postId)}`, '_blank');
-
   const copyOrMove = (type: string, link: string) => 
     type == 'gmail' ? copyToClipboard(link) : window.open(link, '_blank');
 

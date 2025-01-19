@@ -35,8 +35,9 @@ export default function ArticleListViewComponent() {
     setThumbnail(page['thumbnail']);
     setSubTypes({ 'dev': { 'share': '공유', 'contribute': '기여'} });
 
-    setTimeout(() => {
+    setTimeout(() => {  
 
+      setPostList([]);
       let searched = posts
         .filter((item: any) => item['articleType'] === currentMenu)
         .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
@@ -47,7 +48,7 @@ export default function ArticleListViewComponent() {
       });
       setPostList(searched);
       setPostCount(searched.length);
-    }, 2000);
+    }, 500);
 
   }, [currentMenu])
 
@@ -118,20 +119,3 @@ export default function ArticleListViewComponent() {
     </div>
   )
 }
-
-                  // <div className='tech-research-outer' key={index}>
-                  //   <div className='tech-research-inner'>
-                  //     <div className='thumb-box'>
-                  //       <img src='/images/icon/file_shape_128.svg'></img>
-                  //     </div>
-
-                  //     <div className='txt-box'>
-                  //       <div className='corp-box'>{capitalizeFirstLetter(item['createAt'])}</div>
-                  //       <div className='topic-box'>
-                  //         <a onClick={() => moveDetail(item['postId'])}>
-                  //         {item['title']}
-                  //         </a>
-                  //       </div>
-                  //     </div>          
-                  //   </div>        
-                  // </div>

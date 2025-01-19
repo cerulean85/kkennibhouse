@@ -8,12 +8,8 @@ export default function AboutResearchListViewComponent({ items }: { items: []}) 
   useEffect(() => {
     setTimeout(() => {
         setList(items);
-    }, 2000);
+    }, 1000);
   }, []);
-
-  const moveDetail = (postId: string) =>
-    window.open(`/article?from=about&postId=${encodeURIComponent(postId)}`, '_blank');
-
 
   return (
     <div className='ly_tech-align'>
