@@ -3,6 +3,8 @@ title: '데미안: 아프락사스'
 date: '2025-01-05 00:00:00'
 ---
 
+<img src='/images/books/books-3-1.jpg'>
+
 <strong>
 아프락사스
 

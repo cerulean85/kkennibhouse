@@ -8,7 +8,7 @@ const ArticleCardSkeletonLoader: React.FC = () => (
     <div className='outer'>
       <div className='inner'>
         <div className='thumbnail'>
-        <img className='no-image fit-cover'
+        <img className='no-image'
              src='/images/icon/thumbnail.svg'/>
         </div>
         <div className='card-title'>

@@ -92,10 +92,8 @@ export default function ArticleListViewComponent() {
                     <div className='inner'>
                       <div className='thumbnail'>
                         <img 
-                          className={ [ 
-                              (item.cover === '' ? 'no-image' : 'ext-image'), 
-                              (item.fit === 'hidden' ? 'fit-hidden' : 'fit-cover')
-                            ].filter(Boolean).join(' ')}
+                          className={(item.cover === '' ? 'no-image' : 'ext-image')}
+                          style={{objectFit: item.fit}}
                           src={ item.cover === '' ? '/images/icon/thumbnail.svg' : item.cover}></img>
                       </div>
                       <div className='card-title'>

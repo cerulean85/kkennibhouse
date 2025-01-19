@@ -23,19 +23,19 @@ TO-BE 구조의 핵심은 상태 체크이다. Master 서버가 Worker 서버가
 
 따라서 Master 서버는 다음의 getIdleWorkerCount와 같은 함수를 사용하여 주기적으로 Worker 서버의 유휴 상태를 체크하여 작업을 전달해야 하며, 유휴 상태의 프로세스가 없다면 다른 Worker 서버로 작업을 리다이렉트(redirect)해야 한다.
 
-\`\`\`python
+```python
 def getIdleWorkerCount(self, targetIP, targetPort):
     with grpc.insecure_channel(f"{targetIP}:{targetPort}") as channel:
         stub = EarthlingProtocol_pb2_grpc.EarthlingStub(channel)
         response = stub.ReportIdleWorker(EarthlingProtocol_pb2.ReportRequest())
     return response.idleCount    
-\`\`\`
+```
 
 Worker 서버에는 Master 서버가 전달한 작업을 처리하는 1개 이상의 프로세스가 상시 동작한다. Worker 서버는 동작중인 모든 프로세스 작업 여부를 모니터링해야 하므로 스테이트풀(stateful)해야 한다. 스테이트레스(stateless)한 RESTful API은 통신 방법으로는 부적절하지만 소켓(socker) 통신은 적용해 볼만 한다. 하지만 Master 서버는 새로운 작업이 생성될 때만 Worker 서버로부터 헬스상태, 유휴상태를 보고 받으므로 양방향 통신이 필요하지 않고 연결 상태를 지속적으로 유지할 필요도 없다. gRPC는 스테이트풀(stateful)하면서 단방향으로 통신이 가능하므로 충분히 적절한 대응이 될 수 있다. gRPC에 대해서는 다음에 다시 한 번 설명하겠다. 
 
 Master 서버와 Worker 서버가 통신할 수 있도록 서로 간의 엔트리 포인트를 다음과 같이 지정해줘야 한다. 새롭게 추가된 Worker 서버가 있다면 서버의 엔트리 포인트를 반드시 추가해줘야 한다.
 
-\`\`\`yaml
+```yaml
 rpc:
   ...
   manager:
@@ -55,7 +55,8 @@ rpc:
       address: '10.0.0.5'
       port: 50052
       workers: [1000, 2000, 3000]
-\`\`\`
+```
+
 다음의 동영상은 DB에 등록된 작업이 Master 서버가 Worker 서버로 작업을 배정하고, Worker 서버가 작업을 처리하는 로그를 녹화한 것이다.
 
 
