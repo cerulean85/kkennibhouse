@@ -4,6 +4,6 @@ import ArticleListViewComponent from '@/components/article/ArticleListView';
 
 export default function EssayPage() {
   return (
-    <ArticleListViewComponent></ArticleListViewComponent>
+    <ArticleListViewComponent tabs={{}}></ArticleListViewComponent>
   )
 }

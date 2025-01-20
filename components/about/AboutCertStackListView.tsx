@@ -8,7 +8,7 @@ export default function AboutCertStackListViewComponent({ items }: { items: []})
   useEffect(() => {
     setTimeout(() => {
         setList(items);
-    }, 500);
+    }, 1000);
   }, []);
 
   return (

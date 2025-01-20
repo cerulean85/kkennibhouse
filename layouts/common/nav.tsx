@@ -77,9 +77,9 @@ const CommonNav = () => {
                     </div>
 
                     <div className="right">
-                        <a onClick={() => movePage('search')}>
+                        {/* <a onClick={() => movePage('search')}>
                             <img className="util-btn" src='/images/icon/search_btn.svg'></img>
-                        </a>
+                        </a> */}
                         
                         <button className="util-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</button>
                     </div>

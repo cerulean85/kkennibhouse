@@ -6,11 +6,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
 
-type SubTypes = {
-  [key: string]: {[value: string]: string;};
+type Tabs = {
+  [key: string]: string;
 };
 
-export default function ArticleListViewComponent() {
+
+export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} ) {
 
   const currentMenu: string = useSelector((state: RootState) => state.currentMenu.menu);
   const [name, setName] = useState('');
@@ -20,7 +21,7 @@ export default function ArticleListViewComponent() {
   const [thumbnail, setThumbnail] = useState('');
   const [postCount, setPostCount] = useState(0);
   const [postList, setPostList] = useState([]);
-  const [subTypes, setSubTypes] = useState<SubTypes>({});
+  const [activeTab, setActiveTab] = useState('');
 
   useEffect(() => {
 
@@ -33,32 +34,35 @@ export default function ArticleListViewComponent() {
     setMessage(page['message']);
     setAuthor(page['author']);
     setThumbnail(page['thumbnail']);
-    setSubTypes({ 'dev': { 'share': '공유', 'contribute': '기여'} });
-
-    setTimeout(() => {  
-
-      setPostList([]);
-      let searched = posts
-        .filter((item: any) => item['articleType'] === currentMenu)
-        .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
-
-      searched = searched.map((item: any) => { 
-        item.createAt = item.createAt.split(' ')[0];
-        return item;
-      });
-      setPostList(searched);
-      setPostCount(searched.length);
-    }, 500);
+    setTimeout(selectTab, 500);
 
   }, [currentMenu])
+
+  const splitDate = (items: []) => {
+    items.map((item: any) => { 
+      item.createAt = item.createAt.split(' ')[0];
+      return item;
+    });
+  }
 
   const moveDetail = (postId: string) => {
     window.open(`/post/${encodeURIComponent(currentMenu)}/${encodeURIComponent(postId)}`, '_blank');
   }
 
+  const selectTab = (tab: string = '') => {
+    setPostList([]);
+    let searched = posts
+    .filter((item: any) => item.articleType === currentMenu && (tab === '' ? true : item.subType === tab))
+    .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());   
+    
+    splitDate(searched);
+    setPostList(searched);
+    setPostCount(searched.length);
+    setActiveTab(tab);
+  }
+
   return (
     <div className='ly_article-listview'>
-
         <div className='listview-desk'>
             <div className='name'>{name}</div>
             <div className='sub-name'>{subname} ({postCount})</div>
@@ -82,6 +86,20 @@ export default function ArticleListViewComponent() {
                 <div className='sub-name'>{subname} ({postCount})</div>
                 </div>
             </div>
+            <div style={{ display: "flex", borderBottom: "2px solid #ddd" }}>
+              {(Object.keys(tabs).length > 0) && (
+                <button 
+                  onClick={() => selectTab()}
+                  className={`tab-button ${(activeTab === '') ? 'selected' : 'unselected'}`}
+                  >전체</button>
+              )}
+              {Object.keys(tabs).map((key) => (
+                <button 
+                  onClick={() => selectTab(key)}
+                  className={`tab-button ${(activeTab === key) ? 'selected' : 'unselected'}`}
+                  >{tabs[key]}</button>
+              ))}
+            </div>
             <div className='lv_post-align'>
             {postList.length > 0 ? (
             
@@ -98,7 +116,7 @@ export default function ArticleListViewComponent() {
                       </div>
                       <div className='card-title'>
                         { item.subType !== '' && 
-                          <span>[{subTypes[item.articleType][item.subType]}]&nbsp;</span>
+                          <span>[{tabs[item.subType]}]&nbsp;</span>
                         }
                         {item['title']}
                       </div>

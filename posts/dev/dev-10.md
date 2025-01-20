@@ -1,5 +1,5 @@
 ---
-title: "Message Orineted Middleware"
+title: "메시지 지향 미들웨어"
 date: "2025-01-15 00:00:00"
 ---
 ## 메시지 지향 미들웨어(Message Oriented Middleware, MOM)
