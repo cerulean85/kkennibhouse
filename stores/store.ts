@@ -3,13 +3,15 @@ import counterReducer from './counterSlice';
 import dooriReducer from './dooriSlice';
 import openedDetailViewReducer from './openedDetailView'
 import currentMenuReducer from './currentMenuSlice'
+import configReducer from './configSlice'
 
 const store = configureStore({
     reducer: {
         counter: counterReducer,
         doori: dooriReducer,
         openedDetailView: openedDetailViewReducer,
-        currentMenu: currentMenuReducer
+        currentMenu: currentMenuReducer,
+        config: configReducer
     },
 });
 

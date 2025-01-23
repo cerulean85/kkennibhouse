@@ -13,6 +13,7 @@ type Tabs = {
 
 export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} ) {
 
+  const remoteUrl = useSelector((state: RootState) => state.config.remoteUrl);
   const currentMenu: string = useSelector((state: RootState) => state.currentMenu.menu);
   const [name, setName] = useState('');
   const [subname, setSubname] = useState('');
@@ -21,9 +22,12 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   const [thumbnail, setThumbnail] = useState('');
   const [postCount, setPostCount] = useState(0);
   const [postList, setPostList] = useState([]);
-  const [activeTab, setActiveTab] = useState('');
+  const [originPostList, setOriginPostList] = useState([]);
+  const [activeTab, setActiveTab] = useState<string|undefined>(undefined);
 
   useEffect(() => {
+    if (currentMenu == '')
+      return;
 
     const pageCase = ['dev', 'essay', 'books', 'archive'];    
     if(!pageCase.includes(currentMenu)) return;
@@ -33,9 +37,8 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     setSubname(page['subname']);
     setMessage(page['message']);
     setAuthor(page['author']);
-    setThumbnail(page['thumbnail']);
-    setTimeout(selectTab, 500);
-
+    setThumbnail(page['thumbnail']);    
+    selectTab();
   }, [currentMenu])
 
   const splitDate = (items: []) => {
@@ -49,17 +52,46 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     window.open(`/post/${encodeURIComponent(currentMenu)}/${encodeURIComponent(postId)}`, '_blank');
   }
 
-  const selectTab = (tab: string = '') => {
-    setPostList([]);
-    let searched = posts
-    .filter((item: any) => item.articleType === currentMenu && (tab === '' ? true : item.subType === tab))
+  const selectTab = async (tab: string = '') => { setActiveTab(tab); }
+  useEffect(() => {
+    
+    if (activeTab === undefined)
+      return;
+
+    if (activeTab === '' && originPostList.length === 0) {
+      updateOriginPostList();
+      return;
+    }
+    
+    updatePostList();
+  }, [activeTab]);
+
+  const fetchOriginPostList = async () => {
+    try {
+      const res = await fetch(`${remoteUrl}/posts/${currentMenu}/1`);
+      if (!res.ok) throw new Error('Failed to fetch data');
+      const posts = await res.json();
+      setOriginPostList(posts.list);
+    } catch (error) {
+      console.error(error);
+    }    
+  };
+
+  const updatePostList = () => {
+    let searched: any = originPostList
+    .filter((item: any) => item.articleType === currentMenu && (activeTab === '' ? true : item.subType === activeTab))
     .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());   
     
     splitDate(searched);
     setPostList(searched);
-    setPostCount(searched.length);
-    setActiveTab(tab);
+    setPostCount(searched.length);    
   }
+
+
+
+  const updateOriginPostList = () => { fetchOriginPostList(); }
+  useEffect(() => { updatePostList(); }, [originPostList]);
+  
 
   return (
     <div className='ly_article-listview'>
