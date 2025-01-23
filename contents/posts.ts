@@ -278,4 +278,16 @@ export const posts: any = [
         fit: 'contain',
         createAt: '2024-06-30 00:00:00'
     },
+
+    {
+        articleType: 'archive',
+        subType: '',
+        postId: 'archive-8',
+        title: 'Spring Boot 서버 Lambda로 배포하기',
+        cover: '/images/symbol/39_lambda.svg',
+        fit: 'contain',
+        createAt: '2025-01-23 00:00:00'
+    },
+
+
 ]
