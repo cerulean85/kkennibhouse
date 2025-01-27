@@ -72,7 +72,7 @@ const CommonNav = () => {
                 )}
                 <div className="profile">
                     <div className="left">
-                        <img src="/images/kkennib_logo.png"/>
+                        <img src="/images/kkennib_logo.svg"/>
                         <h3><a onClick={() => movePage('about') }className="home-link">깬닙하우스</a></h3>
                     </div>
 
@@ -96,7 +96,9 @@ const CommonNav = () => {
                 </button>
 
                 <div className="slide-profile">
-                    <img src="/images/kkennib_logo.png"/>
+                    <div>
+                        <img src="/images/kkennib_logo.svg"/>
+                    </div>
                 </div>
                 <div className="slide-profile">
                     <h3><a onClick={() => movePage('')}>깬닙하우스</a></h3>

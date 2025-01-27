@@ -144,6 +144,16 @@ export const posts: any = [
     }
     ,
     {
+        "articleType": "dev",
+        "subType": "contribute",
+        "postId": "dev-12",
+        "title": "깬닙하우스 소개",
+        "cover": "/images/kkennib_logo.svg",
+        "fit": "contain",
+        "createAt": "2025-01-28 00:00:00"
+    }
+    ,
+    {
         "articleType": "essay",
         "subType": "",
         "postId": "essay-1",

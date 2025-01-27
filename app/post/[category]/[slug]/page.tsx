@@ -57,7 +57,6 @@ export default function PostPage({ params }: any) {
                 code({ className, children }) {
                   const match = /language-(\w+)/.exec(className || "");
                   return match ? (
-                    // 코드 (```)
                     <SyntaxHighlighter
                       style={atomDark}
                       language={match[1]}
