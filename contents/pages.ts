@@ -167,7 +167,7 @@ export const pages: any = {
         ],
         career: [
             {
-                postId: 'about-1',
+                postId: 'about-2',
                 symbol: '27_logistics.png',
                 title: '물류 자동화<br/>S/W 연구개발',
                 corpName: '한화모멘텀(주)',
@@ -175,7 +175,7 @@ export const pages: any = {
                 corpWorktime: '2023 - 재직중'
             },
             {
-                postId: 'about-2',
+                postId: 'about-1',
                 symbol: '28_bigdata.png',
                 title: '빅데이터 분석<br/>플랫폼 연구개발',
                 corpName: '(주)더아이엠씨',
