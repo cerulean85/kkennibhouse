@@ -134,6 +134,16 @@ export const posts: any = [
     ,
 
     {
+        "articleType": "dev",
+        "subType": "contribute",
+        "postId": "dev-11",
+        "title": "열장비 레시피 자동 추천 시스템 개발",
+        "cover": "",
+        "fit": "contain",
+        "createAt": "2025-01-27 00:00:00"
+    }
+    ,
+    {
         "articleType": "essay",
         "subType": "",
         "postId": "essay-1",

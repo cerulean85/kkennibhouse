@@ -66,6 +66,9 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     updatePostList();
   }, [activeTab]);
 
+  const fetchDemoPostList = () => {
+    setOriginPostList(posts);
+  }
   const fetchOriginPostList = async () => {
     try {
       const res = await fetch(`${remoteUrl}/posts/${currentMenu}/1`);
@@ -88,8 +91,11 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   }
 
 
-
-  const updateOriginPostList = () => { fetchOriginPostList(); }
+  const updateOriginPostList = () => { 
+    const hostname = window.location.hostname; // 현재 도메인 가져오기
+    if (hostname === 'localhost') fetchDemoPostList();
+    else fetchOriginPostList(); 
+  }
   useEffect(() => { updatePostList(); }, [originPostList]);
   
 
