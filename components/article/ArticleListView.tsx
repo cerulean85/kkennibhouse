@@ -22,14 +22,17 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   const [thumbnail, setThumbnail] = useState('');
   const [postCount, setPostCount] = useState(0);
   const [postList, setPostList] = useState([]);
-  const [originPostList, setOriginPostList] = useState([]);
+  const [originPostList, setOriginPostList] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState<string|undefined>(undefined);
+  const [pageNo, setPageNo] = useState(1);
+  const [totalPostCount, setTotalPostCount] = useState(0);
+  const [totalPageCount, setTotalPageCount] = useState(0);
 
   useEffect(() => {
     if (currentMenu == '')
       return;
 
-    const pageCase = ['dev', 'essay', 'books', 'archive'];    
+    const pageCase = ['dev', 'archive', 'essay', 'memo'];    
     if(!pageCase.includes(currentMenu)) return;
 
     const page = pages[currentMenu];
@@ -49,7 +52,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   }
 
   const moveDetail = (postId: string) => {
-    window.open(`/post/${encodeURIComponent(currentMenu)}/${encodeURIComponent(postId)}`, '_blank');
+    window.open(`/post/${encodeURIComponent(currentMenu)}/${currentMenu}-${encodeURIComponent(postId)}`, '_blank');
   }
 
   const selectTab = async (tab: string = '') => { setActiveTab(tab); }
@@ -67,14 +70,25 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   }, [activeTab]);
 
   const fetchDemoPostList = () => {
-    setOriginPostList(posts);
+    // setOriginPostList(posts);
+    setOriginPostList(prevList => [...prevList, ...posts]);
+  }
+  const appendOriginPostList = (newPosts: any[]) => {
+    setOriginPostList(prevList => [...prevList, ...newPosts]);
   }
   const fetchOriginPostList = async () => {
+
+    if (totalPostCount > 0 && totalPostCount <= originPostList.length)
+      return;
+
     try {
-      const res = await fetch(`${remoteUrl}/posts/${currentMenu}/1`);
+      const res = await fetch(`${remoteUrl}/posts/${currentMenu}/${pageNo}`);
       if (!res.ok) throw new Error('Failed to fetch data');
-      const posts = await res.json();
-      setOriginPostList(posts.list);
+      
+      const result = await res.json();
+      setTotalPostCount(result.totalItemCount);
+      setTotalPageCount(result.totalPageCount);
+      appendOriginPostList(result.list);
     } catch (error) {
       console.error(error);
     }    
@@ -93,17 +107,54 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
 
   const updateOriginPostList = () => { 
     const hostname = window.location.hostname; // 현재 도메인 가져오기
-    if (hostname === 'localhost') fetchDemoPostList();
-    else fetchOriginPostList(); 
+    // if (hostname === 'localhost') fetchDemoPostList();
+    // else 
+      fetchOriginPostList(); 
   }
   useEffect(() => { updatePostList(); }, [originPostList]);
+  
+
+  const [isAtBottom, setIsAtBottom] = useState(false);
+
+  const handleScroll = () => {
+    const bottom = window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight;
+    setIsAtBottom(bottom);
+  };
+
+  useEffect(() => {
+    // window 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', handleScroll);
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  useEffect(() => {
+
+    if (!isAtBottom) return;
+    setIsAtBottom(false);
+
+    if (totalPageCount <= pageNo) return;
+    setPageNo(pageNo + 1);
+
+  }, [isAtBottom]);
+
+  useEffect(() => {    
+    if (pageNo == 1)
+      return;
+    
+    updateOriginPostList();
+  }, [pageNo]);
+
   
 
   return (
     <div className='ly_article-listview'>
         <div className='listview-desk'>
             <div className='name'>{name}</div>
-            <div className='sub-name'>{subname} ({postCount})</div>
+            <div className='sub-name'>{subname} ({totalPostCount})</div>
             <div className='pic-outer'>
             <img className='pic' src={thumbnail}/>
             </div>
@@ -121,7 +172,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                 <img className='pic' src={thumbnail}/>
                 <div className='ly_name'>
                 <div className='name'>{name}</div>
-                <div className='sub-name'>{subname} ({postCount})</div>
+                <div className='sub-name'>{subname} ({totalPostCount})</div>
                 </div>
             </div>
             <div style={{ display: "flex", borderBottom: "2px solid #ddd" }}>
@@ -152,13 +203,15 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                           style={{objectFit: item.fit}}
                           src={ item.cover === '' ? '/images/icon/thumbnail.svg' : item.cover}></img>
                       </div>
-                      <div className='card-title'>
-                        { item.subType !== '' && 
-                          <span>[{tabs[item.subType]}]&nbsp;</span>
-                        }
-                        {item['title']}
+                      <div className='txt-box'>
+                        <div className='card-title'>
+                          { item.subType !== '' && 
+                            <span>[{tabs[item.subType]}]&nbsp;</span>
+                          }
+                          {item['title']}
+                        </div>
+                        <div className='card-date'><span>작성일:&nbsp;</span>{item.createAt}</div>
                       </div>
-                      <div className='card-date'><span>작성일:&nbsp;</span>{item.createAt}</div>
                     </div>
                   </div>
                 </a>

@@ -1,4 +1,4 @@
-export default function BooksLayout({
+export default function MemoLayout({
     children,
   }: Readonly<{
     children: React.ReactNode;

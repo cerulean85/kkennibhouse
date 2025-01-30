@@ -359,7 +359,8 @@ h2.mg-top {
         align-items: center;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background-color: $header-bg-color;
+        border-bottom: 1px solid $header-menu-hover-color;
+        
 
         @media (max-width: 768px) {
           height: 160px;
@@ -381,51 +382,60 @@ h2.mg-top {
         }
       }
 
-      .card-title {
-        width: calc(100% - 30px);
-        height: 55px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* 최대 2줄로 제한 */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding-left: 15px;
-        padding-right: 5px;
-        padding-top: 10px;
-        font-size: 1.2em;
+      .txt-box {
+        height: calc(100% - 200px);
+        width: 100%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: $header-bg-color;
 
-        @media (max-width: 768px) {
-          max-height: 50px;
-          font-size: 1.0em;
-        }
+        .card-title {
+          width: calc(100% - 30px);
+          height: 55px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* 최대 2줄로 제한 */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-left: 15px;
+          padding-right: 5px;
+          padding-top: 10px;
+          font-size: 1.2em;
 
-        span {
-          color: $primary-color;
-        } 
-      }
-
-      .card-date {
-        height: 10px;
-        color: $header-menu-hover-color;
-        padding-top: 7px;
-        font-size: 1.0em;
-        margin-right: 15px;
-        text-align: right;
-        
-        @media (max-width: 768px) {
-          padding-top: 5px;
-          margin-left: 15px;
-          margin-right: 0px;
-          font-size: 0.8em;
-          text-align: left;
-        } 
-
-        span {
           @media (max-width: 768px) {
-            display: none;
+            max-height: 50px;
+            font-size: 1.0em;
+          }
+
+          span {
+            color: $primary-color;
           } 
         }
-      }       
+
+        .card-date {
+          height: 10px;
+          color: $header-menu-hover-color;
+          padding-top: 7px;
+          font-size: 1.0em;
+          margin-right: 15px;
+          text-align: right;
+          
+          @media (max-width: 768px) {
+            padding-top: 5px;
+            margin-left: 15px;
+            margin-right: 0px;
+            font-size: 0.8em;
+            text-align: left;
+          } 
+
+          span {
+            @media (max-width: 768px) {
+              display: none;
+            } 
+          }
+        }       
+
+      }
     }
   }
 }

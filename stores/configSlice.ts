@@ -6,6 +6,7 @@ interface ConfigSliceState {
 
 const initialState: ConfigSliceState = {
     remoteUrl: "https://happ.kkennib.net"
+    // remoteUrl: "http://localhost:8080"
 }
 
 const configSlice = createSlice({

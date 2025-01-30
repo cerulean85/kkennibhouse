@@ -282,11 +282,11 @@ export const pages: any = {
         thumbnail: '/images/essay.jpg'
     },
 
-    books: {
-        name: 'Books',
-        subname: '책 리뷰',
-        message: '"책이 없는 방은 영혼 없는 육체와 같다."',
-        author: '- 키케로',
+    memo: {
+        name: 'Memo',
+        subname: 'Memorandum',
+        message: '"기록은 과거의 부활이며, 미래의 준비물이다."',
+        author: '- 마크 트웨인',
         thumbnail: '/images/books.png'
     },
 
