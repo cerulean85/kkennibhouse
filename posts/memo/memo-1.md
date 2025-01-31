@@ -3,7 +3,7 @@ title: '허무주의에 대한 오해'
 date: '2025-01-01 00:00:00'
 ---
 
-<img src='/images/books/books-1-1.jpg'>
+<img src='/images/memo/memo-1-1.jpg'>
 
 ##  ‘차라투스트라는 이렇게 말했다’를 읽고
 

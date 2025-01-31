@@ -47,7 +47,7 @@ const CommonNav = () => {
     const menuList = [
         { name: "About.", endpoint: 'about', state: isAbout },
         { name: "Dev.", endpoint: 'dev', state: isDev },
-        { name: "Archive", endpoint: 'archive', state: isArchive },
+        // { name: "Archive", endpoint: 'archive', state: isArchive },
         { name: "Essay", endpoint: 'essay', state: isEssay },
         { name: "Memo.", endpoint: 'memo', state: isMemo },        
     ]

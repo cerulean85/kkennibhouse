@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { posts } from '@/contents/posts'
+import { posts } from '@/posts/meta'
 
 export default function SearchPage() {
   const [searchText, setSearchText] = useState('');

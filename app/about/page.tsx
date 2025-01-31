@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { pages } from '@/contents/pages'
+import { pages } from '@/posts/meta'
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import { copyToClipboard } from '@/lib/util';

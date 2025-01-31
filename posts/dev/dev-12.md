@@ -5,7 +5,7 @@ date: "2025-01-28 00:00:00"
 
 ## 1. 깬닙하우스(kkennib house)란?
 - 포트폴리오겸 블로그 사이트
-- 커리어(About.) 소개, 개발경험(Dev.)과 지식(Archive), 독서(Books), 사색(Essay) 글 공유
+- 커리어(About.) 소개, 개발경험(Dev.)과 지식(Archive), 메모(memo), 사색(Essay) 글 공유
 
 ## 2. 배경 및 문제점
 

@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { posts } from '@/contents/posts'
-import { pages } from '@/contents/pages'
+import { posts, pages } from '@/posts/meta';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
