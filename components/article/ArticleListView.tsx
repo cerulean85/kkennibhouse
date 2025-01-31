@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { posts, pages } from '@/posts/meta';
+import { pages } from '@/posts/meta';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
@@ -31,7 +31,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     if (currentMenu == '')
       return;
 
-    const pageCase = ['dev', 'archive', 'essay', 'memo'];    
+    const pageCase = ['dev', 'essay', 'memo'];    
     if(!pageCase.includes(currentMenu)) return;
 
     const page = pages[currentMenu];
@@ -54,7 +54,9 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     window.open(`/post/${encodeURIComponent(currentMenu)}/${currentMenu}-${encodeURIComponent(postId)}`, '_blank');
   }
 
-  const selectTab = async (tab: string = '') => { setActiveTab(tab); }
+  const selectTab = async (tab: string = '') => { 
+    setActiveTab(tab); 
+  }
   useEffect(() => {
     
     if (activeTab === undefined)
@@ -70,7 +72,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
 
   const fetchDemoPostList = () => {
     // setOriginPostList(posts);
-    setOriginPostList(prevList => [...prevList, ...posts]);
+    // setOriginPostList(prevList => [...prevList, ...posts]);
   }
   const appendOriginPostList = (newPosts: any[]) => {
     setOriginPostList(prevList => [...prevList, ...newPosts]);
@@ -94,6 +96,12 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   };
 
   const updatePostList = () => {
+
+    console.log("originPostList")
+    console.log("originPostList")
+    console.log("originPostList")
+    console.log(originPostList)
+
     let searched: any = originPostList
     .filter((item: any) => item.articleType === currentMenu && (activeTab === '' ? true : item.subType === activeTab))
     .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());   
@@ -198,13 +206,13 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                     <div className='inner'>
                       <div className='thumbnail'>
                         <img 
-                          className={(item.cover === '' ? 'no-image' : 'ext-image')}
+                          className={((item.cover === null || item.cover === '') ? 'no-image' : 'ext-image')}
                           style={{objectFit: item.fit}}
-                          src={ item.cover === '' ? '/images/icon/thumbnail.svg' : item.cover}></img>
+                          src={ (item.cover === null || item.cover === '') ? '/images/icon/thumbnail.svg' : item.cover}></img>
                       </div>
                       <div className='txt-box'>
                         <div className='card-title'>
-                          { item.subType !== '' && 
+                          { (item.subType != null && item.subType !== '') && 
                             <span>[{tabs[item.subType]}]&nbsp;</span>
                           }
                           {item['title']}

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { posts } from '@/posts/meta'
+// import { posts } from '@/posts/meta'
 
 export default function SearchPage() {
   const [searchText, setSearchText] = useState('');
@@ -16,10 +16,10 @@ export default function SearchPage() {
   const includes = (target: string) => target.includes(searchText);
   const search = () => {
 
-    const filteredItems1 = posts.filter((item: any) => !item.articleType.includes('about'))
-    const filteredItems2 = filteredItems1.filter((item: any) => includes(item.title) || includes(item.contents));
-    setPostList(filteredItems2);
-    setPostCount(filteredItems2.length);
+    // const filteredItems1 = posts.filter((item: any) => !item.articleType.includes('about'))
+    // const filteredItems2 = filteredItems1.filter((item: any) => includes(item.title) || includes(item.contents));
+    // setPostList(filteredItems2);
+    // setPostCount(filteredItems2.length);
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

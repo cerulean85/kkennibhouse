@@ -75,7 +75,6 @@ python rabbitmqadmin -u tos_admin -p <Any Pass> -V /TOS_SYSTEM delete queue name
 
 ## RabbitMQ 메시지 처리 과정
 - RabbitMQ로 전달된 메시지는 Exchange를 통해 Queue로 전달됨
-![alt text](../images/rabbitmq.png)
 
 ## Exhange 유형
 ### Direct Exchange

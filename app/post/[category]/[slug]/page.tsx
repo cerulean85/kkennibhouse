@@ -9,9 +9,14 @@ import path from 'path';
 import matter from 'gray-matter';
 
 export async function generateStaticParams() {
+  
   const postsDirectory = path.join(process.cwd(), 'posts');
-  const categories = fs.readdirSync(postsDirectory);
+  console.log(`postsDirectory: ${postsDirectory}`);
 
+  const getDirectories = (source: string) =>
+    fs.readdirSync(source)
+      .filter(name => fs.statSync(path.join(source, name)).isDirectory());
+  const categories = getDirectories(postsDirectory);
   const paths = [];
 
   for (const category of categories) {
@@ -28,8 +33,9 @@ export async function generateStaticParams() {
 }
 
 // 페이지 컴포넌트
-export default function PostPage({ params }: any) {
-  const { category, slug } = params;
+export default async function PostPage({ params }: any) {
+
+  const { category, slug } = await params;
 
   // 파일 읽기
   const filePath = path.join(process.cwd(), 'posts', category, `${slug}.md`);
