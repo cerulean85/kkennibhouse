@@ -47,9 +47,8 @@ const CommonNav = () => {
     const menuList = [
         { name: "About.", endpoint: 'about', state: isAbout },
         { name: "Dev.", endpoint: 'dev', state: isDev },
-        // { name: "Archive", endpoint: 'archive', state: isArchive },
-        { name: "Insight", endpoint: 'insight', state: isInsight },
         { name: "Memo.", endpoint: 'memo', state: isMemo },        
+        { name: "Insight", endpoint: 'insight', state: isInsight }
     ]
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
