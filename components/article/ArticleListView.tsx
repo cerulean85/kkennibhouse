@@ -19,7 +19,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   const [message, setMessage] = useState('');
   const [author, setAuthor] = useState('');
   const [thumbnail, setThumbnail] = useState('');
-  const [postCount, setPostCount] = useState(0);
+  // const [postCount, setPostCount] = useState(0);
   const [postList, setPostList] = useState([]);
   const [originPostList, setOriginPostList] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState<string|undefined>(undefined);
@@ -70,17 +70,18 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     updatePostList();
   }, [activeTab]);
 
-  const fetchDemoPostList = () => {
+  // const fetchDemoPostList = () => {
     // setOriginPostList(posts);
     // setOriginPostList(prevList => [...prevList, ...posts]);
-  }
+  // }
   const appendOriginPostList = (newPosts: any[]) => {
     setOriginPostList(prevList => [...prevList, ...newPosts]);
   }
   const fetchOriginPostList = async () => {
 
-    if (totalPostCount > 0 && totalPostCount <= originPostList.length)
+    if (totalPostCount > 0 && totalPostCount <= originPostList.length) {      
       return;
+    }
 
     try {
       const res = await fetch(`${remoteUrl}/posts/${currentMenu}/${pageNo}`);
@@ -96,27 +97,21 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   };
 
   const updatePostList = () => {
-
-    console.log("originPostList")
-    console.log("originPostList")
-    console.log("originPostList")
-    console.log(originPostList)
-
     let searched: any = originPostList
     .filter((item: any) => item.articleType === currentMenu && (activeTab === '' ? true : item.subType === activeTab))
     .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());   
     
     splitDate(searched);
     setPostList(searched);
-    setPostCount(searched.length);    
+    // setPostCount(searched.length);    
   }
 
 
   const updateOriginPostList = () => { 
-    const hostname = window.location.hostname; // 현재 도메인 가져오기
+    // const hostname = window.location.hostname; // 현재 도메인 가져오기
     // if (hostname === 'localhost') fetchDemoPostList();
     // else 
-      fetchOriginPostList(); 
+    fetchOriginPostList(); 
   }
   useEffect(() => { updatePostList(); }, [originPostList]);
   
@@ -149,8 +144,13 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   }, [isAtBottom]);
 
   useEffect(() => {    
-    if (pageNo == 1)
+    if (pageNo == 1) {
+      setOriginPostList([]);
+      // setTotalPostCount(result.totalItemCount);
+      // setTotalPageCount(result.totalPageCount);
+      // appendOriginPostList(result.list);
       return;
+    }
     
     updateOriginPostList();
   }, [pageNo]);
