@@ -1,6 +1,6 @@
 $primary-color: #3498db;
 $header-bg-color:#f8f9fa;
-$primary-txt-color: #333;
+$primary-txt-color: #252525;
 $header-height: 80px;
 $nav-height: 60px;
 $header-menu-hover-color: #adb5bd;
@@ -893,7 +893,7 @@ header {
     width: 100%;
     max-width: 300px; /* 메뉴 폭 */
     height: 100vh;
-    background-color: #333;
+    background-color: $primary-txt-color;
     color: white;
     display: flex;
     flex-direction: column;

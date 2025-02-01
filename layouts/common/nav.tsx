@@ -97,7 +97,7 @@ const CommonNav = () => {
 
                 <div className="slide-profile">
                     <div>
-                        <img src="/images/kkennib_logo.svg"/>
+                        <img src="/images/kkennib_logo_white.svg"/>
                     </div>
                 </div>
                 <div className="slide-profile">
