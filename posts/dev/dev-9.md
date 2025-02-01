@@ -3,7 +3,7 @@ title: '한화 ESG 스마트팩토리'
 date: '2025-01-14 00:00:00'
 ---
 
-<img src='/images/dev/dev-9-1.jpg'>
+<img src='/images/dev/dev-9-1.jpg' width='50%'>
 
 ## 1. 배경
 - 스마트팩토리의 확산으로 제조 현장에서 소프트웨어의 중요성이 증가
@@ -22,7 +22,7 @@ date: '2025-01-14 00:00:00'
 
 ## 3. 소프트웨어 특징
 
-<img src='/images/dev/dev-9-2.jpg'>
+<img src='/images/dev/dev-9-2.jpg' width='50%'>
 
 **1) 모듈화 및 유연성 제공**
 - 통신, 제어 등 공통 핵심 기능을 모듈화하여 블록처럼 조합 가능

@@ -838,7 +838,8 @@ header {
   height: $header-height; // Nav 높이
   padding-left: 15px;
   padding-right: 10px;
-
+  border-bottom: 1px solid $header-menu-hover-color;
+  
   .menu {
     position: absolute;
     border-radius: 5px;
@@ -1173,10 +1174,11 @@ footer {
 }
 
 .md-img {
-  width: 50%;
+  // width: 50%;
   min-width: 320px;
   margin-top: 20px;
   border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
 
   @media (max-width: 480px) {
     min-width: 240px;

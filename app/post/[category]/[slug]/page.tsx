@@ -88,8 +88,8 @@ export default async function PostPage({ params }: any) {
                   return (
                     <blockquote
                       style={{
-                        background: "#7afca19b",
-                        padding: "1px 15px",
+                        background: "#adb5bd",
+                        padding: "1px 30px",
                         borderRadius: "10px",
                       }}
                       {...props}

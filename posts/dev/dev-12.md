@@ -52,5 +52,5 @@ date: "2025-01-28 00:00:00"
 - **페이지 내비게이션(Page Navigation)**: 아직 글이 많지 않아 웹 페이지 상에서 페이지 내비게이션 미구현
 - **콜드스타트(Cold Start)**: 최초 혹은 타임아웃 길어지면 콘텐츠 로딩 느림
 - **리스트 항목 업데이트 기능**: 이 기능이 없어서 매번 AWS에서 아래와 같이 JSON을 입력해야 함
-  - <img src='/images/dev/dev-12-1.png'>
+  - <img src='/images/dev/dev-12-1.png' width='50%'>
 - **SNS 공유**: Threads에 포스팅을 위한 기능 고려중 
