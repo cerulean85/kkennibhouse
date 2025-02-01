@@ -2,7 +2,7 @@
 import React from 'react';
 import ArticleListViewComponent from '@/components/article/ArticleListView';
 
-export default function EssayPage() {
+export default function InsightPage() {
   return (
     <ArticleListViewComponent tabs={{}}></ArticleListViewComponent>
   )

@@ -49,6 +49,7 @@ tags: SpringBoot, Lambda
 		- AWS Region 입력: 예시> ap-northeast-2
 		- 이외 옵션 모두 y 해도 됨
 		- 처음에는 그냥 꺼져버릴 수 있음 > sam deploy 입력
+  - deploy 전에는 ```sam local start-api``` 명령어로 테스트할 것
 
 ## 배포 성공시 확인할 수 있는 결과
 - sam deploy 후 Successfully created/updated stack 메시지가 나타남

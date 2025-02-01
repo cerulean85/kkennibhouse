@@ -25,7 +25,7 @@ const CommonNav = () => {
     useEffect(() => { 
         setIsAbout(currentMenu == 'about');
         setIsDev(currentMenu == 'dev');
-        setIsEssay(currentMenu == 'essay');
+        setIsInsight(currentMenu == 'insight');
         setIsMemo(currentMenu == 'memo');
         setIsSearch(currentMenu == 'search');
         setIsArchive(currentMenu == 'archive');
@@ -33,7 +33,7 @@ const CommonNav = () => {
 
     const [isAbout,  setIsAbout]  = useState(false);
     const [isDev,  setIsDev]  = useState(false);
-    const [isEssay,  setIsEssay]  = useState(false);
+    const [isInsight,  setIsInsight]  = useState(false);
     const [isMemo,  setIsMemo]  = useState(false);
     const [isSearch,  setIsSearch]  = useState(false);
     const [isArchive,  setIsArchive]  = useState(false);
@@ -48,7 +48,7 @@ const CommonNav = () => {
         { name: "About.", endpoint: 'about', state: isAbout },
         { name: "Dev.", endpoint: 'dev', state: isDev },
         // { name: "Archive", endpoint: 'archive', state: isArchive },
-        { name: "Essay", endpoint: 'essay', state: isEssay },
+        { name: "Insight", endpoint: 'insight', state: isInsight },
         { name: "Memo.", endpoint: 'memo', state: isMemo },        
     ]
 

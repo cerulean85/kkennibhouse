@@ -1,4 +1,4 @@
-export default function EssayLayout({
+export default function InsightLayout({
     children,
   }: Readonly<{
     children: React.ReactNode;

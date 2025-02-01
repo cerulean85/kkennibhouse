@@ -31,7 +31,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     if (currentMenu == '')
       return;
 
-    const pageCase = ['dev', 'essay', 'memo'];    
+    const pageCase = ['dev', 'insight', 'memo'];    
     if(!pageCase.includes(currentMenu)) return;
 
     const page = pages[currentMenu];
