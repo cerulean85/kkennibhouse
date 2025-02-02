@@ -146,9 +146,6 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   useEffect(() => {    
     if (pageNo == 1) {
       setOriginPostList([]);
-      // setTotalPostCount(result.totalItemCount);
-      // setTotalPageCount(result.totalPageCount);
-      // appendOriginPostList(result.list);
       return;
     }
     
