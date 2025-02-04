@@ -52,6 +52,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>깬닙하우스</title>
+        <meta name="google-adsense-account" content="ca-pub-2703512740946569"></meta>
         {/* <link rel="icon" href="%PUBLIC_URL%/heart_icon.ico"></link> */}
       </head>
       <body>
