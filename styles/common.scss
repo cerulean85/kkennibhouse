@@ -373,12 +373,9 @@ h2.mg-top {
         }
 
         .no-image {
-          width: 160px;
-          object-fit: cover;
-
-          @media (max-width: 768px) {
-            width: 128px;
-          } 
+          width: calc(100% - 40px);
+          height: calc(100% - 40px);
+          object-fit: contain;
         }
       }
 

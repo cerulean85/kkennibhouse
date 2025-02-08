@@ -4,6 +4,7 @@ import { pages } from '@/posts/meta';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
+import Image from 'next/image'
 
 type Tabs = {
   [key: string]: string;
@@ -160,7 +161,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
             <div className='name'>{name}</div>
             <div className='sub-name'>{subname} ({totalPostCount})</div>
             <div className='pic-outer'>
-            <img className='pic' src={thumbnail}/>
+            <Image className='pic' src={thumbnail} width={72} height={72} alt="thumbnail"/>
             </div>
             
             <div className='message-outer'>
@@ -173,7 +174,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
 
         <div className='listview'>
             <div className='header'>
-                <img className='pic' src={thumbnail}/>
+                <Image className='pic' src={thumbnail} width={72} height={72} alt="thumbnail"/>
                 <div className='ly_name'>
                 <div className='name'>{name}</div>
                 <div className='sub-name'>{subname} ({totalPostCount})</div>
@@ -202,10 +203,25 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                   <div className='outer'>
                     <div className='inner'>
                       <div className='thumbnail'>
-                        <img 
-                          className={((item.cover === null || item.cover === '') ? 'no-image' : 'ext-image')}
-                          style={{objectFit: item.fit}}
-                          src={ (item.cover === null || item.cover === '') ? '/images/icon/thumbnail.svg' : item.cover}></img>
+
+                          {
+                            (item.cover === null || item.cover === '') ? (
+                              <Image 
+                                className="no-image"
+                                width={0} height={0}
+                                src="/images/icon/thumbnail.svg"
+                                alt="thumbnail"
+                              />
+                            ) : (
+                              <Image 
+                                className="ext-image"
+                                width={260} height={180}
+                                src={item.cover}
+                                alt="thumbnail"
+                              />
+                            )
+                          }
+
                       </div>
                       <div className='txt-box'>
                         <div className='card-title'>
