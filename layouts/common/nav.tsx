@@ -29,12 +29,14 @@ const CommonNav = () => {
         setIsMemo(currentMenu == 'memo');
         setIsSearch(currentMenu == 'search');
         setIsArchive(currentMenu == 'archive');
+        setIsOntology(currentMenu == 'ontology');
     }, [currentMenu])
 
     const [isAbout,  setIsAbout]  = useState(false);
     const [isDev,  setIsDev]  = useState(false);
     const [isInsight,  setIsInsight]  = useState(false);
     const [isMemo,  setIsMemo]  = useState(false);
+    const [isOntology,  setIsOntology]  = useState(false);
     const [isSearch,  setIsSearch]  = useState(false);
     const [isArchive,  setIsArchive]  = useState(false);
 
@@ -48,7 +50,8 @@ const CommonNav = () => {
         { name: "About.", endpoint: 'about', state: isAbout },
         { name: "Dev.", endpoint: 'dev', state: isDev },
         { name: "Memo.", endpoint: 'memo', state: isMemo },        
-        { name: "Insight", endpoint: 'insight', state: isInsight }
+        { name: "Insight", endpoint: 'insight', state: isInsight },
+        { name: "Ontology", endpoint: 'ontology', state: isOntology }
     ]
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);

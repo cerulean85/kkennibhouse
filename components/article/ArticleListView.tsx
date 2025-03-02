@@ -32,7 +32,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     if (currentMenu == '')
       return;
 
-    const pageCase = ['dev', 'memo', 'insight'];    
+    const pageCase = ['dev', 'memo', 'insight', 'ontology'];    
     if(!pageCase.includes(currentMenu)) return;
 
     const page = pages[currentMenu];

@@ -1,6 +1,11 @@
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from "remark-gfm";
+
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css'; // Katex CSS를 임포트해야 수식이 잘 렌더링됩니다.
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -57,8 +62,9 @@ export default async function PostPage({ params }: any) {
         <div className='contents'>
           <div className='preview'>      
             <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
+            children={content}
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeRaw, rehypeKatex]}
               components={{
                 code({ className, children }) {
                   const match = /language-(\w+)/.exec(className || "");
@@ -67,11 +73,17 @@ export default async function PostPage({ params }: any) {
                       style={atomDark}
                       language={match[1]}
                       PreTag="div"
+                      customStyle={{
+                        // marginTop: '100px',    // Top margin 추가
+                        // padding: '40px',      // Padding 값을 추가
+                        // top: '100px'
+                      }}
                     >
                       {String(children)
                         .replace(/\n$/, "")
                         .replace(/\n&nbsp;\n/g, "")
                         .replace(/\n&nbsp\n/g, "")}
+                        
                     </SyntaxHighlighter>
                   ) : (
                     <SyntaxHighlighter
@@ -125,14 +137,46 @@ export default async function PostPage({ params }: any) {
                       </iframe>   
                     </div>
                   )
-                }
+                },
+                table({ node, ...props }) {
+                  return (
+                    <table
+                      {...props}
+                      style={{
+                        width: '100%',
+                        borderCollapse: 'collapse',
+                        border: '1px solid #000', // 테두리 색상 지정
+                      }}
+                    />
+                  );
+                },
+                th({ node, ...props }) {
+                  return (
+                    <th
+                      {...props}
+                      style={{
+                        border: '1px solid #000', // 테두리 색상 지정
+                        padding: '10px',
+                        textAlign: 'center',
+                        backgroundColor: '#f8f9fa'
+                      }}
+                    />
+                  );
+                },
+                td({ node, ...props }) {
+                  return (
+                    <td
+                      {...props}
+                      style={{
+                        border: '1px solid #000', // 테두리 색상 지정
+                        padding: '10px',
+                        textAlign: 'center',
+                      }}
+                    />
+                  );
+                },
               }}
             >
-              {content
-                .replace(/\n/gi, "\n\n")
-                .replace(/\*\*/gi, "@$_%!^")
-                .replace(/@\$_%!\^/gi, "**")
-                .replace(/<\/?u>/gi, "*")}
             </ReactMarkdown>
           </div>
         </div>

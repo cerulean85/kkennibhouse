@@ -288,6 +288,14 @@ export const pages: any = {
         thumbnail: '/images/books.png'
     },
 
+    ontology: {
+        name: 'Ontology',
+        subname: '개념/원리',
+        message: '"만약 당신이 어떤 것을 단순하게 설명할 수 없다면, 당신은 그것을 충분히 이해하지 못한 것이다."',
+        author: '- 리처드 파인만',
+        thumbnail: '/images/concept.png'
+    },
+
     archive: {
         name: 'Archive',
         subname: '기록 보관소',
