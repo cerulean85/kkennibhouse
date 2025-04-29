@@ -1,6 +1,6 @@
 ---
 title: Next.js Locale 적용
-date: 2025-01-23
+date: 2025-03-01
 tags: Next.js, React.js
 ---
 
