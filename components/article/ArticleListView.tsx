@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/stores/store';
 import ArticleCardSkeletonLoader from '@/components/article/ArticleCardSkeletonLoader';
 import Image from 'next/image'
+import { usePathname  } from 'next/navigation';
 
 type Tabs = {
   [key: string]: string;
@@ -27,11 +28,13 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   const [pageNo, setPageNo] = useState(1);
   const [totalPostCount, setTotalPostCount] = useState(0);
   const [totalPageCount, setTotalPageCount] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (currentMenu == '')
+    if (currentMenu == '' || currentMenu != pathname.replace('/', ''))
       return;
 
+    console.error(`tototo: ${currentMenu}, ${pathname.replace('/', '')}`);
     const pageCase = ['dev', 'memo', 'insight', 'ontology'];    
     if(!pageCase.includes(currentMenu)) return;
 
@@ -42,6 +45,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     setAuthor(page['author']);
     setThumbnail(page['thumbnail']);    
     selectTab();
+
   }, [currentMenu])
 
   const splitDate = (items: []) => {
@@ -158,18 +162,32 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   return (
     <div className='ly_article-listview'>
         <div className='listview-desk'>
-            <div className='name'>{name}</div>
-            <div className='sub-name'>{subname} ({totalPostCount})</div>
-            <div className='pic-outer'>
-            <Image className='pic' src={thumbnail} width={72} height={72} alt="thumbnail"/>
-            </div>
-            
-            <div className='message-outer'>
-            <div className='message'>{message}</div>
-            </div>
-            <div className='message-outer'>
-            <div className='message-author'>{author}</div>
-            </div> 
+            {
+              name &&
+              <div className='name'>{name}</div>
+            }
+            { 
+              subname && totalPostCount && 
+              <div className='sub-name'>{subname} ({totalPostCount})</div>
+            }
+            { 
+              thumbnail && 
+              <div className='pic-outer'>
+                <Image className='pic' src={thumbnail} width={72} height={72} alt="thumbnail"/>
+              </div>
+            }
+            {
+              message &&
+              <div className='message-outer'>
+                <div className='message'>{message}</div>
+              </div>
+            }
+            {
+              author &&
+              <div className='message-outer'>
+                <div className='message-author'>{author}</div>
+              </div> 
+            }
         </div>
 
         <div className='listview'>

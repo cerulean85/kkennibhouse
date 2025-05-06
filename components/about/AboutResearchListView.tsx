@@ -23,7 +23,7 @@ export default function AboutResearchListViewComponent({ items }: { items: []}) 
               <div className='txt-box'>
                 <div className='corp-box'>{item.journal}</div>
                 <div className='topic-box'>
-                  <a href={item.link} target='_blank'>
+                  <a href={item.link} target='_blank' style={{ color: '#333', textDecoration: 'none' }}>
                     <div dangerouslySetInnerHTML={{ __html: item.title}}></div>
                   </a>
                 </div>
