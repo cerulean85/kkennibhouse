@@ -34,7 +34,6 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
     if (currentMenu == '' || currentMenu != pathname.replace('/', ''))
       return;
 
-    console.error(`tototo: ${currentMenu}, ${pathname.replace('/', '')}`);
     const pageCase = ['dev', 'memo', 'insight', 'ontology'];    
     if(!pageCase.includes(currentMenu)) return;
 
