@@ -105,7 +105,7 @@ module.exports = {
 ## 3.1. **컬러**
 
 - Tailwind CSS에서는 다양한 색상을 쉽게 적용할 수 있음
-- 색상은 `색상 이름-숫자` 형식으로 지정됨
+- 색상은 색상이름-숫자 형식으로 지정됨
 - [**CORE CONCEPTS** 바로가기](https://tailwindcss.com/docs/colors)
 ```html
 <!-- 텍스트 색상 -->
