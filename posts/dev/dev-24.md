@@ -135,11 +135,10 @@ module.exports = {
 
 - 여백([margin](https://tailwindcss.com/docs/margin), [padding](https://tailwindcss.com/docs/padding))은 숫자에 따라 크기를 설정할 수 있음
 - 숫자는 Tailwind에서 미리 정의된 값으로 변환됨
-
-* m: 모든 방향에 margin 적용
-* p: 모든 방향에 padding 적용
-* mt, mr, mb, ml: 각 방향에 개별적으로 margin 적용
-* pt, pr, pb, pl: 각 방향에 개별적으로 padding 적용
+- m: 모든 방향에 margin 적용
+- p: 모든 방향에 padding 적용
+- mt, mr, mb, ml: 각 방향에 개별적으로 margin 적용
+- pt, pr, pb, pl: 각 방향에 개별적으로 padding 적용
 
 ```html
 <!-- 마진(여백) 설정 -->
