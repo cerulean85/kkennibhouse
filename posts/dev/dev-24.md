@@ -287,10 +287,10 @@ module.exports = {
 
 ## 3.10. **상태 클래스 (State Classes)**
 - 상태에 따라 스타일을 적용할 수 있는 유틸리티 클래스를 제공
-* hover: 마우스를 올렸을 때
-* focus: 포커스를 받았을 때
-* active: 클릭했을 때
-* disabled: 비활성화 되었을 때
+- hover: 마우스를 올렸을 때
+- focus: 포커스를 받았을 때
+- active: 클릭했을 때
+- disabled: 비활성화 되었을 때
 
 ```html
 <!-- hover 상태에서 색상 변경 -->
