@@ -18,8 +18,8 @@ tags: TailwindCSS
 | 항목                       | 설명                                                   |
 | ------------------------ | ---------------------------------------------------- |
 | **빠른 개발 속도**             | HTML에서 바로 스타일 적용 → 빠른 프로토타이핑 가능                      |
-| **디자인 일관성 유지**           | 유틸리티 클래스 기반 + 설정 파일(`tailwind.config.js`)로 디자인 규칙 관리 |
-| **반응형 쉽게 구현**            | `sm`, `md`, `lg` 등 브레이크포인트 기반 클래스 제공                 |
+| **디자인 일관성 유지**           | 유틸리티 클래스 기반 + 설정 파일(tailwind.config.js)로 디자인 규칙 관리 |
+| **반응형 쉽게 구현**            | sm, md, lg 등 브레이크포인트 기반 클래스 제공                 |
 | **높은 커스터마이징 가능**         | 테마, 색상, 간격 등 자유롭게 설정 가능                              |
 | **퍼포먼스 최적화 가능**          | 사용하지 않는 CSS 제거(Purge 기능)로 파일 크기 감소                   |
 | **컴포넌트 기반 프레임워크와 궁합 좋음** | React, Vue 등과 함께 사용할 때 재사용성이 뛰어남                     |
@@ -74,7 +74,7 @@ module.exports = {
   - 기존 CSS에서는 BEM이나 CSS Module, SCSS 등으로 **스타일의 범위(scope)** 를 조절해야 했으나, Tailwind는 클래스를 직접 요소에 지정하므로 **스타일이 자동으로 컴포넌트 범위 내에만 적용**됨
 
 - **상태 기반 클래스 적용이 쉬움**
-  - 컴포넌트는 상태(state)를 많이 사용하는데, Tailwind는 상태별 유틸리티 클래스(예: `hover:`, `focus:`, `disabled:` 등)를 쉽게 적용할 수 있어 **동적인 UI 구성에 매우 편리**함
+  - 컴포넌트는 상태(state)를 많이 사용하는데, Tailwind는 상태별 유틸리티 클래스(예: hover:, focus:, disabled: 등)를 쉽게 적용할 수 있어 **동적인 UI 구성에 매우 편리**함
 
 ```html
 <button class="bg-gray-500 hover:bg-gray-700 disabled:opacity-50" disabled>
@@ -88,7 +88,7 @@ module.exports = {
 
 # 3. 문법
 - Tailwind CSS는 **유틸리티 클래스**를 사용하여 스타일을 적용합니다. 
-- 각 유틸리티 클래스는 특정 속성(예: `padding`, `margin`, `color`, `font-size`)을 지정
+- 각 유틸리티 클래스는 특정 속성(예: padding, margin, color, font-size)을 지정
 
 예시:
 
@@ -122,7 +122,7 @@ module.exports = {
 ## 3.2. **크기 (Size)**
 
 - 다양한 크기 유틸리티를 제공
-- [`width`](https://tailwindcss.com/docs/width), [`height`](https://tailwindcss.com/docs/height), [`max-width`](https://tailwindcss.com/docs/max-width), [`max-height`](https://tailwindcss.com/docs/max-height), [`min-width`](https://tailwindcss.com/docs/min-width), [`min-height`](https://tailwindcss.com/docs/min-height) 등에 대한 속성을 설정 가능
+- [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height), [max-width](https://tailwindcss.com/docs/max-width), [max-height](https://tailwindcss.com/docs/max-height), [min-width](https://tailwindcss.com/docs/min-width), [min-height](https://tailwindcss.com/docs/min-height) 등에 대한 속성을 설정 가능
 
 ```html
 <!-- 폭 설정 -->
@@ -137,13 +137,13 @@ module.exports = {
 
 ## 3.3. **여백 (Spacing)**
 
-- 여백([`margin`](https://tailwindcss.com/docs/margin), [`padding`](https://tailwindcss.com/docs/padding))은 숫자에 따라 크기를 설정할 수 있음
+- 여백([margin](https://tailwindcss.com/docs/margin), [padding](https://tailwindcss.com/docs/padding))은 숫자에 따라 크기를 설정할 수 있음
 - 숫자는 Tailwind에서 미리 정의된 값으로 변환됨
 
-* `m`: 모든 방향에 `margin` 적용
-* `p`: 모든 방향에 `padding` 적용
-* `mt`, `mr`, `mb`, `ml`: 각 방향에 개별적으로 `margin` 적용
-* `pt`, `pr`, `pb`, `pl`: 각 방향에 개별적으로 `padding` 적용
+* m: 모든 방향에 margin 적용
+* p: 모든 방향에 padding 적용
+* mt, mr, mb, ml: 각 방향에 개별적으로 margin 적용
+* pt, pr, pb, pl: 각 방향에 개별적으로 padding 적용
 
 ```html
 <!-- 마진(여백) 설정 -->
@@ -179,7 +179,7 @@ module.exports = {
 
 ## 3.5. **디스플레이**
 
-- Tailwind CSS에서는 `display` 속성을 쉽게 설정할 수 있음
+- Tailwind CSS에서는 display 속성을 쉽게 설정할 수 있음
 
 ```html
 <!-- 블록 레벨 요소 -->
@@ -242,7 +242,7 @@ module.exports = {
 ## 3.8. **반응형 디자인**
 
 - Tailwind CSS는 **반응형 디자인**을 위한 유틸리티 클래스를 제공합니다. 
-- `sm`, `md`, `lg`, `xl` 등의 접두사를 사용하여 화면 크기별로 스타일을 조정할 수 있습니다.
+- sm, md, lg, xl 등의 접두사를 사용하여 화면 크기별로 스타일을 조정할 수 있습니다.
 
 #### 기본 브레이크포인트
 - **sm** (640px 이상)
@@ -272,7 +272,7 @@ module.exports = {
 ```
 
 ## 3.9. **커스터마이징**
-- **`tailwind.config.js`** 파일을 통해 기본 테마나 유틸리티 클래스들을 쉽게 수정할 수 있음
+- **tailwind.config.js** 파일을 통해 기본 테마나 유틸리티 클래스들을 쉽게 수정할 수 있음
 - 색상, 간격, 폰트 등을 커스터마이즈할 수 있음
 
 ```js
@@ -292,10 +292,10 @@ module.exports = {
 
 ## 3.10. **상태 클래스 (State Classes)**
 - 상태에 따라 스타일을 적용할 수 있는 유틸리티 클래스를 제공
-* `hover:`: 마우스를 올렸을 때
-* `focus:`: 포커스를 받았을 때
-* `active:`: 클릭했을 때
-* `disabled:`: 비활성화 되었을 때
+* hover: 마우스를 올렸을 때
+* focus: 포커스를 받았을 때
+* active: 클릭했을 때
+* disabled: 비활성화 되었을 때
 
 ```html
 <!-- hover 상태에서 색상 변경 -->
