@@ -11,9 +11,9 @@ tags: GitHub Actions, AWS, CI/CD, SAM, Spring Boot
 
 ## ✅ 해결 방법: GitHub Actions를 통한 자동 배포 파이프라인 구축
 
-1. **`.github/workflows/deploy.yml`** 생성  
+1. **.github/workflows/deploy.yml** 생성  
 2. GitHub Secrets에 AWS 인증 정보 등록  
-3. GitHub Actions를 통해 `main` 브랜치에 Push 시 자동으로 SAM을 통해 배포 수행  
+3. GitHub Actions를 통해 **main** 브랜치에 Push 시 자동으로 SAM을 통해 배포 수행  
 
 ---
 
@@ -68,16 +68,16 @@ jobs:
             --region ap-northeast-2
 ````
 
-* **주의:** 위 설정을 사용하려면 GitHub 저장소에서 `Settings > Secrets and variables > Actions` 경로에 다음 정보를 등록해야 함
+* **주의:** 위 설정을 사용하려면 GitHub 저장소에서 **Settings > Secrets and variables > Actions** 경로에 다음 정보를 등록해야 함
 
-  * `AWS_ACCESS_KEY_ID`
-  * `AWS_SECRET_ACCESS_KEY`
+  * **AWS_ACCESS_KEY_ID**
+  * **AWS_SECRET_ACCESS_KEY**
 
 ---
 
 ## 🔐 보안 정보 관리: AWS Secrets Manager 활용
 
-* 기존 `application.yml`에 직접 DB 정보를 작성하는 방식은 보안상 취약함
+* 기존 **application.yml**에 직접 DB 정보를 작성하는 방식은 보안상 취약함
 
 ```yaml
 spring:
@@ -108,7 +108,7 @@ spring:
 
 ## ☕ Spring Boot에서 AWS Secrets Manager 사용 예시
 
-### 📄 `AwsSecretsManagerConfig.java`
+### 📄 **AwsSecretsManagerConfig.java**
 
 ```java
 @Configuration
@@ -123,7 +123,7 @@ public class AwsSecretsManagerConfig {
 }
 ```
 
-### 📄 `DataSourceConfig.java`
+### 📄 **DataSourceConfig.java**
 
 ```java
 @Configuration
@@ -159,9 +159,9 @@ public class DataSourceConfig {
 
 ## 🗃️ DynamoDB 접근 설정: IAM 기반 접근
 
-* 설정 파일에 Key를 직접 쓰지 않고, `DefaultAWSCredentialsProviderChain`을 통해 IAM 역할을 위임
+* 설정 파일에 Key를 직접 쓰지 않고, **DefaultAWSCredentialsProviderChain**을 통해 IAM 역할을 위임
 
-### 📄 `AWSDynamoDBConfig.java`
+### 📄 **AWSDynamoDBConfig.java**
 
 ```java
 @Configuration
@@ -196,7 +196,7 @@ public class AWSDynamoDBConfig {
 
 | 항목        | 적용 내용                                          |
 | --------- | ---------------------------------------------- |
-| CI/CD 자동화 | GitHub Actions로 `main` 브랜치 Push 시 SAM 배포 자동 실행 |
+| CI/CD 자동화 | GitHub Actions로 **main** 브랜치 Push 시 SAM 배포 자동 실행 |
 | 보안        | AWS Secrets Manager로 DB 정보 및 보안 키 관리           |
 | 코드 일관성    | 배포와 형상관리 통합 → 버전 충돌 방지                         |
 | 보안 유지     | IAM 및 CredentialsProviderChain을 활용한 보안 권한 위임   |
