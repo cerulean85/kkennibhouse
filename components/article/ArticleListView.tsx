@@ -202,7 +202,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                 <button 
                   onClick={() => selectTab()}
                   className={`tab-button ${(activeTab === '') ? 'selected' : 'unselected'}`}
-                  >전체</button>
+                  >전체({totalPostCount})</button>
               )}
               {Object.keys(tabs).map((key) => (
                 <button 

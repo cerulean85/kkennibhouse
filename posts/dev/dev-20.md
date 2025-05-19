@@ -41,7 +41,7 @@ tags: SpringBoot, Lambda
 ## AWS SAM으로 서버 배포
 - PowerShell > template.yml가 있는 경로로 이동
 - 도커 켜져 있어야 함 (안 켜져 있으면 아래 에러 발생)
-  - Error: Running AWS SAM projects locally requires Docker. Have you got it installed and running?
+  > Error: Running AWS SAM projects locally requires Docker. Have you got it installed and running?
 - 다음 명령어 차례대로 입력: 
 	- sam build
     	- 배포할 앱 빌드. 성공 시 Build Succeeded 나타남
