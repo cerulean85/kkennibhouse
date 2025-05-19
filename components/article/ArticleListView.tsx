@@ -28,6 +28,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
   const [pageNo, setPageNo] = useState(1);
   const [totalPostCount, setTotalPostCount] = useState(0);
   const [totalPageCount, setTotalPageCount] = useState(0);
+  const [subPageItemCount, setSubPageItemCount] = useState<any>({});
   const pathname = usePathname();
 
   useEffect(() => {
@@ -94,6 +95,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
       const result = await res.json();
       setTotalPostCount(result.totalItemCount);
       setTotalPageCount(result.totalPageCount);
+      setSubPageItemCount(result.subTypeCounts);
       appendOriginPostList(result.list);
     } catch (error) {
       console.error(error);
@@ -208,7 +210,7 @@ export default function ArticleListViewComponent({ tabs = {} } : {tabs : Tabs} )
                 <button 
                   onClick={() => selectTab(key)}
                   className={`tab-button ${(activeTab === key) ? 'selected' : 'unselected'}`}
-                  >{tabs[key]}</button>
+                  >{tabs[key]}({subPageItemCount[key]})</button>
               ))}
             </div>
             <div className='lv_post-align'>
